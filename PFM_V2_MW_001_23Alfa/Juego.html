@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+	<head>
+  	<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<link rel="stylesheet" href="css/presentacion.css" >
+	</head>
+	<body >
+		<div id="Login">
+		    <p id="Titulo">MINI WAR SIMULATION </p>
+			<p id="LoginTitulo">Menu Inicial</p>
+		    
+		    	<center>
+	           <button id="Jugar" type="button" class="btn btn-success">Jugar</button><br>
+	           <button id="Tutorial" type="button" class="btn btn-success">Tutorial</button><br>
+	           <button id="Instrucciones" type="button" class="btn btn-success">Instrucciones</button><br>
+	           <button id="Creditos" type="button" class="btn btn-success">Creditos</button><br>
+	            </center>
+	       
+		</div>
+		
+		<div id="SelPersonajes">
+		    <p id="TituloP">Selección de Nivel</p>
+			<canvas id="lienzoPersonaje" width=750px height=650px ></canvas>
+			<button id="P1" type="button" class="btn btn-success">Heracleion</button><br>
+			<button id="P2" type="button" class="btn btn-success">Jerusalén</button><br>
+		    <button id="P3" type="button" class="btn btn-success">Constantinopla</button><br>
+		    <button id="AtrasP" type="button" class="btn btn-success">Atras</button><br>
+	    	
+       
+		</div>
+		
+		<div id="Juego">
+		    
+			<canvas id="lienzo1" width=3000px height=2000px ></canvas>
+			<canvas id="lienzo2" width=3000px height=2000px ></canvas>
+			<canvas id="lienzoCiudad" width=3000px height=1024px ></canvas>
+			<canvas id="escenarioT" width=256px height=256px></canvas>
+			<canvas id="lienzoAtaque" width=3000px height=2000px ></canvas>
+			<canvas id="lienzoAtaque2" width=3000px height=2000px ></canvas>
+			<button id="AtrasMapa" type="button" class="btn btn-success">Volver al mapa</button><br>
+			<button id="Informacion" type="button" class="btn btn-success">Información</button><br>
+			<button id="Construccion" type="button" class="btn btn-success">Construcción</button><br>
+			<button id="Reclutar" type="button" class="btn btn-success">Reclutar</button><br>
+			<button id="CerrarPapiro" type="button" class="btn btn-success">Cerrar</button><br>
+			<button id="CerrarInfo" type="button" class="btn btn-success">Cerrar</button><br>
+			<button id="Construir" type="button" class="btn btn-success">Construir</button><br>
+			<button id="ReclutarTropas" type="button" class="btn btn-success">Alistar</button><br>
+			<button id="Cancelar" type="button" class="btn btn-success">Cancelar</button><br>
+			<button id="Atacar" type="button" class="btn btn-success">Atacar</button><br>
+			<button id="RegresarMapa" type="button" class="btn btn-success">Regresar al mapa</button><br>
+			<button id="Ejercito" type="button" class="btn btn-success">Ejercito</button><br>
+			<button id="RegresarEaMapa" type="button" class="btn btn-success">Cerrar</button><br>
+			<button id="IniciarBatalla" type="button" class="btn btn-success">Iniciar Batalla</button><br>
+			<button id="Abandonar" type="button" class="btn btn-success">Abandonar</button><br>
+			<button id="VictoriaBatalla" type="button" class="btn btn-success">Regresar al mapa</button><br>
+			<button id="FailBatalla" type="button" class="btn btn-success">Regresar al mapa</button><br>
+			<button id="SimuladorBatalla" type="button" class="btn btn-success">Simular Batalla</button><br>
+			<button id="CondicionVictoria" type="button" class="btn btn-success">Victoria Total</button><br>
+			<button id="CondicionDerrota" type="button" class="btn btn-success">Derrota Total</button><br>
+			
+		</div>
+		<div id="txt"></div>
+		
+		
+		
+		
+		<div id="Instruccion">
+		    <p id="TituloI">Instrucciones del Juego</p>
+		    <p id="TituloI2">Para iniciar el Juego dar "Click" en el boton Jugar del menu principal."</p>
+		    <p id="TituloI3">Para tener una noción del juego, ademas de saber lo que aparece en el haz "Click" en el boton tutorial,</p>
+		    <p id="TituloI4">en el tutorial se te daran las bases del juego y detlles que podrás ver en el.</p>
+		    <p id="TituloI5">Para ver los creditos dar "Click" en el boton Creditos del menu principal"</p>
+		    
+		    <p id="TituloI6">Tras dar "Click" en Jugar saldra la pestaña de Seleccion de Nivel.</p>
+		    <p id="TituloI7">Si estas comenzando el juego podras solo elegir el primer nivel,</p>
+		    <p id="TituloI8">si ya has pasado el primer nivel podras elegir el segundo nivel,</p>
+		    <p id="TituloI9">o si ya pasaste el segundo podrás jugar el tercer nivel.</p>
+		    
+		    <p id="TituloI10">Al iniciar el Juego se muestra el mapa principal del mismo. Con las letras del teclado, "A", "S", "W" y "D" </p>
+		    <p id="TituloI11">o las flechas podras mover la camara en el mapa principal. Ahí podrás iniciar la interacción con los </p>
+		    <p id="TituloI12">diferentes elementos del juego, como el mejorar las construcciones de tus ciudades,</p>
+		    <p id="TituloI13">reclutar mas tropas o atacar ciudades enemigas.</p>
+		    
+		    <p id="TituloI14">Recuerda que si pierdes tres batallas o todas tus ciudades perderas el juego,</p>
+		    <p id="TituloI15">si conquistas todas las ciudades enemigas alcanzaras la victoria total del juego,</p>
+		    <p id="TituloI16">y podrás jugar el siguiente nivel, ademas con cada victoria en batalla obtendrás</p>
+		    <p id="TituloI17">recursos, para invertir sabiamente.</p>
+		    
+		    <p id="TituloI18">Ten en cuenta que construir y reclutar llevan un tiempo, y qten presente la alerta de ataque del enemigo,</p>
+		    <p id="TituloI19">cuando esta llegue a 0 recibiras un ataque y puedes perder esa ciudad si pierdes el combate, esta cuenta </p>
+		    <p id="TituloI20">hacia atras se reinicia si realizas un ataque, mmaximiza el tiempo y recluta la mayor cantidad  de tropas</p>
+		    <p id="TituloI21">posibles, y trata siempre de tener una buena probabilidad de victoria. </p>
+		    		    
+		    <p id="TituloI22">En batalla recuerda que las tropas de infanteria son buenas contra la caballeria, las de caballeria contra</p>
+		    <p id="TituloI23">las de arqueria y las de arqueria contra las de infanteria, usalas estrategicamente para vencer, pero tambien</p>
+		    <p id="TituloI24">ten en cuenta sus niveles, ganaras el combate si vences todas las tropas enemigas o reduces su resistencia a cero</p>
+		    <p id="TituloI25">Todo dentro del juego se realiza con "click", desde seleccionar tropas hasta seleccionar que construir.</p>
+			<p id="TituloI26">Disfruta del juego y esperamos verte en una siguiente entrega.</p>
+		    
+			<button id="AtrasI" type="button" class="btn btn-success">Atras</button><br>
+		    <button id="SiguienteI" type="button" class="btn btn-success">Siguiente</button><br>
+		</div>
+		
+		<div id="CreditosC">
+		    <p id="TituloC">Creditos del Juego</p>
+		    <p id="TituloC2">Juego MINI WAR SIMULATION  desarrollado por:</p>
+		    <p id="TituloC3">Raúl Roque Di Marco D´Silva</p>
+		    <p id="TituloC4">Con Universal Arts School, Master programacion en videojuegos: </p>
+		    <p id="TituloC5">Proyecto Final</p>
+			<button id="AtrasCr" type="button" class="btn btn-success">Atras</button><br>
+		    
+		    	
+		</div>
+		<div id="TutorialJ">
+			<canvas id="lienzoTutorial1" width=3000px height=2000px ></canvas>
+			<canvas id="lienzoTutorial2" width=3000px height=2000px ></canvas>
+			<button id="SiguienteTutorial" type="button" class="btn btn-success">></button><br>
+		    <button id="AtrasTutorial" type="button" class="btn btn-success">Salir Tutorial</button><br>
+			<button id="InformacionTutorial" type="button" class="btn btn-success">Información</button><br>
+			<button id="ConstruccionTutorial" type="button" class="btn btn-success">Construcción</button><br>
+			<button id="ReclutarTutorial" type="button" class="btn btn-success">Reclutar</button><br>
+			<button id="AtacarTutorial" type="button" class="btn btn-success">Atacar</button><br>
+		    	
+		</div>
+		
+		
+		
+		<script src="lib/jquery-3.3.1.min.js"></script>
+		<script src="lib/jquery.touchSwipe.min.js"></script>
+        <script src="lib/Tween.js"></script>
+        <script src="lib/virtualjoystick.js"></script>
+        <script src="lib/Camara.js"></script>
+        <script src="js/Personaje.js"></script>
+		<script src="js/Ciudad.js"></script>
+        <script src="js/funciones.js"></script>
+		<script src="js/funcionesJuego.js"></script>
+        
+        
+        <script src="js/condicionesIniciales.js"></script>
+        <script src="js/bucle.js"></script>
+        <script src="js/inicio.js"></script>
+        
+		
+		
+        
+        
+	</body>
+</html>

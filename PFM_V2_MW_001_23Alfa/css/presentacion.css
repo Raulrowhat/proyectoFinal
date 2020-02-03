@@ -1,0 +1,842 @@
+body,html{margin:0px;padding:0px;overflow:hidden;}
+body {
+
+	background: rgb(236, 226, 198);
+
+}
+
+#contenedor,#Juego,#TutorialJ{
+    position:absolute;
+    top:0px;
+    left:0px; 
+    /*border:1px solid #000000; */
+    width:800px;
+    height:800px;
+	
+    display:none;
+}
+
+
+#lienzoMapa, #lienzoPersonaje,#lienzoTexto,#lienzo1,#lienzo2,#miniJuegos,#lienzoTutorial1{
+    position:absolute;
+    top:0px;
+    left:0px;
+    /*border:
+    3px solid #000000;*/
+    
+}
+#lienzoTutorial2{
+    position:absolute;
+    top:0px;
+    left:0px;
+    /*border:
+    3px solid #000000;*/
+     display:none;
+}
+
+
+#escenarioT{position:absolute;}
+#lienzoCiudad{position:absolute;
+	top:0px;
+    left:0px;
+	
+}
+
+#lienzoAtaque{position:absolute;
+	top:0px;
+    left:0px;
+	display:none;
+	
+}
+#lienzoAtaque2{position:absolute;
+	top:0px;
+    left:0px;
+	display:none;
+	
+}
+
+#AtrasMapa{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:25%;
+    top:31%;
+	display:none;
+    
+}
+
+#Informacion{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:95%;
+    top:2%;
+	display:none;
+    
+}
+
+#Construccion{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:108.5%;
+    top:2%;
+    display:none;
+}
+
+#Reclutar{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:123%;
+    top:2%;
+    display:none;
+}
+
+#CerrarPapiro{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:105%;
+    top:83%;
+    display:none;
+}
+
+#CerrarInfo{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:10%;
+    top:83%;
+    display:none;
+}
+
+#Construir,#ReclutarTropas,#Cancelar{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:105%;
+    top:66%;
+    display:none;
+}
+
+#Atacar{
+    font-size: 35px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:50%;
+    top:31%;
+	display:none;
+    
+}
+
+
+#RegresarMapa,#VictoriaBatalla,#FailBatalla{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:55%;
+    top:65%;
+	display:none;
+    
+}
+
+#SimuladorBatalla{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:85%;
+    top:65%;
+	display:none;
+    
+}
+
+
+
+#Ejercito{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:3%;
+    top:50%;
+	display:none;
+    
+}
+
+
+#RegresarEaMapa{
+   font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:105%;
+    top:83%;
+    display:none;
+    
+}
+
+#Abandonar{
+   font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:105%;
+    top:2%;
+    display:none;
+    
+}
+
+#IniciarBatalla{
+   font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:57%;
+    top:22%;
+    display:none;
+    
+}
+
+#CondicionVictoria,#CondicionDerrota{
+   font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:58%;
+    top:88%;
+    display:none;
+    
+}
+
+
+#SiguienteTutorial{
+   font-size: 20px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:90%;
+    top:54%;
+    display:none;
+    
+}
+
+
+#AtrasTutorial{
+   font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:3%;
+    top:62%;
+    display:none;
+    
+}
+
+
+
+#InformacionTutorial{
+    font-size: 10px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:30%;
+    top:1%;
+	display:none;
+    
+}
+
+#ConstruccionTutorial{
+    font-size: 10px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:40%;
+    top:1%;
+    display:none;
+}
+
+#ReclutarTutorial{
+    font-size: 10px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:50%;
+    top:1%;
+    display:none;
+}
+
+#AtacarTutorial{
+   font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:30%;
+    top:30%;
+    display:none;
+    
+}
+
+
+
+#opcionesMenuJugador{
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:none;
+    
+}
+h1{
+    font-size: 40px;
+    color: red;
+    margin: 0px;
+    padding: 0px;
+    text-shadow:0px 0px 20px rgba(255,255,255,0.5);
+}
+h2{
+    font-size: 40px;
+    color: red;
+    margin:0px;
+    padding:0px;
+}
+.selectorpersonaje{
+    width:256px;
+    height:256px;
+    float:left;
+    font-size:48px;
+}
+.selectorpersonaje:first-child{
+    margin-right:10px;
+}
+.selectorpersonaje img{
+    width:256px;
+    height:256px;
+}
+.selectorpersonajes{
+    width:522px;
+    height:256px;
+    position:relative;
+    left:50%;
+    margin-left:-261px;
+}
+#pantallainicio{
+    position: absolute;
+	border: 1px solid black;
+    text-align: center;
+    border:3px solid black;   
+    border-radius: 25px;
+    background-color: white;
+    
+	
+	left:50%;
+	top:50%;
+	margin-top:-225px;
+	margin-left: -300px;
+	width: 600px;
+	height: 450px;
+}
+.selectorpersonajes .personaje{
+    border:3px dashed black;
+    border-radius:5px;
+    padding:0px;
+    margin:0px;
+    float:left;
+}
+
+.boton{
+    border:1px solid black;
+    width:75px;
+    height:50px;
+    background:rgb(255,200,200);
+    position:absolute;
+    top:5%;
+    left:5%;
+    margin-left:-10px;
+    margin-top:-5px;
+    padding:5px;
+    border-radius:5px;
+    text-align:center;
+    font-size: 15px;
+    line-height:25px;
+}
+
+#opciones{
+    top:5%;
+    left:5%;
+    text-align:center;
+    display:none;
+}
+#boton1{
+    top:5%;
+    left:5%;
+    font-size: 10px;
+    text-align:center;
+    display:none;
+}
+#boton2{
+    top:11%;
+    left:5%;
+    font-size: 10px;
+    display:none;
+}
+#boton3{
+    top:17%;
+    left:5%;
+    font-size: 10px;
+    display:none;
+}
+#boton4{
+    top:23%;
+    left:5%;
+    font-size: 10px;
+    display:none;
+}
+		
+
+
+.button:hover {
+	text-decoration: none;
+}
+	
+#interfazUsuarios{
+    position: fixed;
+    top: 27px;
+    left: 28px;
+    width:500px}
+  
+#Login{
+	position: absolute;
+	border: 1px solid black;
+    text-align: center;
+    border:3px solid black;   
+    border-radius: 15px;
+    
+    
+	
+	left:50%;
+	top:50%;
+	margin-top:-215px;
+	margin-left: -400px;
+	width: 400px;
+	height: 450px;
+	background: rgb(230,214,144);
+	/*background-color: white;*/
+} 
+
+.LoginBoton{
+	width: 400px;
+}
+#LoginTitulo{
+    font-size: 30px;
+}	
+#Titulo{
+    font-size: 35px;
+}	
+
+#Jugar{
+    font-size: 25px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:30%;
+    top:35%;
+    
+}
+#Tutorial{
+    font-size: 25px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:30%;
+    top:50%;
+    
+}
+#Instrucciones{
+    font-size: 25px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:30%;
+    top:65%;
+    
+}
+#Creditos{
+    font-size: 25px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:30%;
+    top:80%;
+    
+}
+
+
+#SelPersonajes{
+	position: absolute;
+	
+    text-align: center;
+    border:3px solid black;   
+    border-radius: 15px;
+    
+    
+	
+	left:50%;
+	top:50%;
+	margin-top:-300px;
+	margin-left: -500px;
+	width: 750px;
+	height: 650px;
+	background: rgb(230,214,144);
+	display: none;
+	/*background-color: white;*/
+} 
+
+#TituloP{
+    font-size: 35px;
+}	
+#Instruccion,#CreditosC,#CargarJ{
+	position: absolute;
+	
+    text-align: center;
+    border:3px solid black;   
+    border-radius: 15px;
+    
+    
+	
+	left:50%;
+	top:50%;
+	margin-top:-300px;
+	margin-left: -500px;
+	width: 750px;
+	height: 650px;
+	background: rgb(230,214,144);
+	display: none;
+	/*background-color: white;*/
+} 
+
+#TituloI,#TituloC,#Pre,#CargarJuego{
+    font-size: 35px;
+}	
+
+#TituloC2{
+    font-size: 35px;
+     position: absolute;
+    top:10%;
+}	
+
+#TituloC3{
+    font-size: 35px;
+     position: absolute;
+    top:30%;
+}
+#TituloC4{
+    font-size: 35px;
+     position: absolute;
+    top:50%;
+}
+#TituloC5{
+    font-size: 35px;
+     position: absolute;
+    top:70%;
+}
+
+#TituloI2{
+    font-size: 30px;
+     position: absolute;
+    top:10%;
+}	
+
+#TituloI3{
+    font-size: 30px;
+     position: absolute;
+    top:30%;
+}
+#TituloI4{
+    font-size: 30px;
+     position: absolute;
+    top:50%;
+}
+#TituloI5{
+    font-size: 30px;
+     position: absolute;
+    top:70%;
+}
+#TituloI6{
+    font-size: 30px;
+     position: absolute;
+    top:10%;
+    display: none;
+}	
+
+#TituloI7{
+    font-size: 30px;
+     position: absolute;
+    top:30%;
+    display: none;
+}
+#TituloI8{
+    font-size: 30px;
+     position: absolute;
+    top:50%;
+    display: none;
+}
+#TituloI9{
+    font-size: 30px;
+     position: absolute;
+    top:70%;
+    display: none;
+}
+
+
+#TituloI10{
+    font-size: 30px;
+     position: absolute;
+    top:10%;
+    display: none;
+}	
+
+#TituloI11{
+    font-size: 30px;
+     position: absolute;
+    top:30%;
+    display: none;
+}
+#TituloI12{
+    font-size: 30px;
+     position: absolute;
+    top:50%;
+    display: none;
+}
+#TituloI13{
+    font-size: 30px;
+     position: absolute;
+    top:70%;
+    display: none;
+}
+
+
+#TituloI14{
+    font-size: 30px;
+     position: absolute;
+    top:10%;
+    display: none;
+}	
+
+#TituloI15{
+    font-size: 30px;
+     position: absolute;
+    top:30%;
+    display: none;
+}
+#TituloI16{
+    font-size: 30px;
+     position: absolute;
+    top:50%;
+    display: none;
+}
+#TituloI17{
+    font-size: 30px;
+     position: absolute;
+    top:70%;
+    display: none;
+}
+
+
+#TituloI18{
+    font-size: 30px;
+     position: absolute;
+    top:10%;
+    display: none;
+}	
+
+#TituloI19{
+    font-size: 30px;
+     position: absolute;
+    top:30%;
+    display: none;
+}
+#TituloI20{
+    font-size: 30px;
+     position: absolute;
+    top:50%;
+    display: none;
+}
+#TituloI21{
+    font-size: 30px;
+     position: absolute;
+    top:70%;
+    display: none;
+}
+
+
+#TituloI22{
+    font-size: 30px;
+     position: absolute;
+    top:10%;
+    display: none;
+}	
+
+#TituloI23{
+    font-size: 30px;
+     position: absolute;
+    top:30%;
+    display: none;
+}
+#TituloI24{
+    font-size: 30px;
+     position: absolute;
+    top:50%;
+    display: none;
+}
+#TituloI25{
+    font-size: 30px;
+     position: absolute;
+    top:70%;
+    display: none;
+}
+
+#TituloI26{
+    font-size: 40px;
+     position: absolute;
+    top:40%;
+	display: none;
+}
+
+
+#AtrasCr{
+    font-size: 25px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:10%;
+    top:90%;
+    
+}
+
+#AtrasI{
+    font-size: 25px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:10%;
+    top:90%;
+    
+}
+
+#SiguienteI{
+    font-size: 25px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:60%;
+    top:90%;
+    
+}
+
+
+#CargarPar{
+    font-size: 25px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:20%;
+    top:35%;
+    
+}
+
+#AtrasP{
+    font-size: 25px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:10%;
+    top:90%;
+    
+}
+
+#P1{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:20%;
+    top:60%;
+    
+}
+#P2{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:42%;
+    top:60%;
+	display:none;
+    
+}
+#P3{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:62%;
+    top:60%;
+	display:none;
+    
+}
+
+
+#txt{
+    font-size: 40px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:1%;
+    top:91%;
+    display: none
+    
+}
+

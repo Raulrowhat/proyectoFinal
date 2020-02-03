@@ -1,0 +1,60 @@
+
+
+
+/****************
+body{
+background: -webkit-linear-gradient(bottom left, rgb(183, 222, 237) 0%, rgb(113, 206, 239) 40%, rgb(33, 180, 226) 70%, rgb(183, 222, 237) 100%) 0% 0% / 100% repeat scroll padding-box border-box rgb(255, 0, 0);
+background: -moz-linear-gradient(bottom left, rgb(183, 222, 237) 0%, rgb(113, 206, 239) 40%, rgb(33, 180, 226) 70%, rgb(183, 222, 237) 100%) 0% 0% / 100% repeat scroll padding-box border-box rgb(255, 0, 0);
+background: -o-linear-gradient(bottom left, rgb(183, 222, 237) 0%, rgb(113, 206, 239) 40%, rgb(33, 180, 226) 70%, rgb(183, 222, 237) 100%) 0% 0% / 100% repeat scroll padding-box border-box rgb(255, 0, 0);
+background: linear-gradient(to top right, rgb(183, 222, 237) 0%, rgb(113, 206, 239) 40%, rgb(33, 180, 226) 70%, rgb(183, 222, 237) 100%) 0% 0% / 100% repeat scroll padding-box border-box rgb(255, 0, 0);
+}*/
+
+body{
+	background: rgb(28, 134, 44);
+}
+
+.button {
+	display: block;
+	width: 175px;
+	line-height: 50px;
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 5px;
+	-webkit-transition: background .3s;
+	transition: background .3s;
+}
+.button:hover {
+	text-decoration: none;
+}
+	
+#interfazUsuarios{
+    position: fixed;
+    top: 27px;
+    left: 28px;
+    width:500px}
+  
+#LoginUI{
+	position: absolute;
+	border: 1px solid black;
+    text-align: center;
+    border:3px solid black;   
+    border-radius: 25px;
+    background-color: white;
+    
+	
+	left:50%;
+	top:50%;
+	margin-top:-125px;
+	margin-left: -200px;
+	width: 400px;
+	height: 250px;
+} 
+
+.LoginBoton{
+	width: 200px;
+}
+#LoginTitulo{
+    font-size: 40px;
+}

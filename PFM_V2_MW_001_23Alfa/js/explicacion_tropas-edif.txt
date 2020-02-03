@@ -1,0 +1,48 @@
+﻿A1
+Much like the Roman velites, skirmishers are restricted to peppering the enemy with long-range javelins before the actual battle commences. They can also be useful for acting as a distraction to the enemy, to lure them into an ambush, or to create a diversion by attacking some target. They are fairly useless in melee combat, and should not be subjected to it.
+
+A2
+Archers were used more widely by some cultures than others. The Romans, amongst almost all the peoples of the ancient world, were prominent in their disdain for archers (and indeed for almost any kind of ranged weapons). Nevertheless, archers are sometimes necessary (particularly, for example, in sieges), and the legions therefore recruited them from amongst the poorer sections of society, and from allies. They are not armoured and thus almost useless in hand-to-hand combat.
+
+A3
+Egypt has a longer tradition of archers than perhaps any other faction in the game, and even if arrows no longer have the effect they used to, Pharaoh's Bowmen are still a formidable force to be reckoned with. They are not like other archers in that they actually wear armour; nevertheless, they are quite useless in hand-to-hand combat.
+
+INF1
+The weakest of Egyptian infantry units, Nubian spearmen are cheap militia-like troops. They hail from the Nubian lands south of Egypt, and are armed only with a spear and shield - no armour. Like most other low-grade infantry, they should be used primarily for defensive purposes, and certainly not committed to a battle against superior enemy foot like Roman legionnaires or Carthaginian Sacred Band infantry.
+
+INF2
+Axe units are not all that common in Rome: Total War. Axes could be used to great effect against slow-moving infantry, but they were unwieldy, and their bearers were by necessity slow themselves. However, this does not take away from their ability to hold a line for a long time against enemy infantry, and it is probably best to attempt taking them out from a distance if possible.
+
+INF3
+Nile spearmen are the medium-level Egyptian infantry unit, and as such have slightly better offensive capabilities than their Nubian counterparts. However, they are still better suited to play a defensive or anti-cavalry role, since their lack of swords will not be to their advantage in a hand-to-hand combat situation.
+
+C1
+Nubian cavalry play much the same role for Egypt that the Numidians did for Carthage (although not in this game, since the Numidians are a separate faction). They are lightly armed horsemen ideally suited for quick raids and ambushes, as also for cutting down fleeing enemies. They will definitely not be able to stand up against enemy cavalry in battle, though, so be careful how you use them.
+
+C2
+Unlike most of the other cavalry units in Rome: Total War, Desert Cavalry are armed with axes, rather than with spears or swords. This perhaps puts them at a disadvantage against other cavalry, since they have less range at close quarters. Nevertheless, they can be used to great effect against infantry, or even more so against any kind of ranged units.
+
+C3
+Yet another crack cavalry force made up of the most influential Egyptians, Nile cavalry are heavier than their other Egyptian counterparts, and as such can be used to deliver a far more decisive blow. They carry only spears, not bothering with the shields and swords of their army's other cavalry. Like all other citizen units, they have higher morale and discipline than those who have been conscripted.
+
+
+DIN
+Un mercado es un conjunto de transacciones de procesos o intercambio de bienes o servicios entre individuos.  
+
+MAD
+La maderera se ocupa del procesamiento de la madera, desde su plantación hasta su transformación en objetos.
+
+LAD
+Un ladrillo es un material de construcción, normalmente cerámico y con forma ortoédrica, cuyas dimensiones permiten que se pueda colocar con una sola mano por parte de un operario. Se emplea en albañilería para la construcción en general.
+
+MET
+Se denominan metales a los elementos químicos caracterizados por ser buenos conductores del calor y la electricidad. Poseen alta densidad y son sólidos a temperatura ambiente (excepto el mercurio); sus sales forman iones electropositivos (cationes) en disolución.
+
+BARR
+En el ámbito militar, recibe el nombre de cuartel el edificio destinado a dar residencia a los soldados. También hace referencia al destacamento, guarnición, estancia y permanencia de las tropas en algún punto.
+
+AQR
+Históricamente se ha practicado el tiro con arco y lanzamineto de jabalina para la caza o la guerra, la arqueria te permitira reclutar tropas con capaciadad de lanzamiento de misiles, como jabalinas o flechas.
+
+ESTA	
+Una caballeriza es un recinto cerrado donde se guardan esencialmente caballos y, en ocasiones, otros animales de granja, especialmente de carga. Se utiliza tanto para resguardar a los caballos, como para alimentarlos y asearlos. 
