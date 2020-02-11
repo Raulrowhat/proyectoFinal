@@ -6,7 +6,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 	if(info==2){
 		if((X>=410&&X<=474&&Y>=155&&Y<=219)){
 				//console.log("mercado");
-				if(Ciudades[id-1].hayColaConst==false&&Ciudades[id-1].edificioDinero<=2){
+				if(Ciudades[id-1].edificio.hayColaConst==false&&Ciudades[id-1].edificio.edificioDinero<=2){
 					contadorClick[0]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=0){
@@ -16,7 +16,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[0]==1){
 						$("#Construir").show();
-						Ciudades[id-1].edificioAConstruir=1;
+						Ciudades[id-1].edificio.edificioAConstruir=1;
 						clickafuera=true;
 						
 						
@@ -28,12 +28,12 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						$("#Construir").hide();
 						//seleccionEdif=1;
 						
-						Ciudades[id-1].edificioAConstruir=1;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificioAConstruir);
+						Ciudades[id-1].edificio.edificioAConstruir=1;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificio.edificioAConstruir);
 						if(okConstruccionOrTropa==true){
-							Ciudades[id-1].hayColaConst=true;
+							Ciudades[id-1].edificio.hayColaConst=true;
 							$("#Cancelar").fadeIn(100);
-							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificioDinero);
+							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificio.edificioDinero);
 						}
 						//aqui dibujar
 						
@@ -47,7 +47,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 			
 			if((X>=600&&X<=664&&Y>=155&&Y<=219)){
 				//console.log("madera");
-				if(Ciudades[id-1].hayColaConst==false&&Ciudades[id-1].edificioRecursoMad<=2){
+				if(Ciudades[id-1].edificio.hayColaConst==false&&Ciudades[id-1].edificio.edificioRecursoMad<=2){
 					contadorClick[1]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=1){
@@ -57,7 +57,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[1]==1){
 						$("#Construir").show();
-						Ciudades[id-1].edificioAConstruir=2;
+						Ciudades[id-1].edificio.edificioAConstruir=2;
 						clickafuera=true;
 						
 					}
@@ -67,13 +67,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						}// para saber numero de click
 						$("#Construir").hide();
 						//seleccionEdif=1;
-						Ciudades[id-1].edificioAConstruir=2;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificioAConstruir);
+						Ciudades[id-1].edificio.edificioAConstruir=2;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificio.edificioAConstruir);
 						if(okConstruccionOrTropa==true){
 							
-							Ciudades[id-1].hayColaConst=true;
+							Ciudades[id-1].edificio.hayColaConst=true;
 							$("#Cancelar").fadeIn(100);
-							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificioRecursoMad);
+							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificio.edificioRecursoMad);
 						}
 						//aqui dibujar
 						
@@ -87,7 +87,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 			
 			if((X>=790&&X<=854&&Y>=155&&Y<=219)){
 				//console.log("ladrillo");
-				if(Ciudades[id-1].hayColaConst==false&&Ciudades[id-1].edificioRecursoLad<=2){
+				if(Ciudades[id-1].edificio.hayColaConst==false&&Ciudades[id-1].edificio.edificioRecursoLad<=2){
 					contadorClick[2]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=2){
@@ -97,7 +97,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[2]==1){
 						$("#Construir").show();
-						Ciudades[id-1].edificioAConstruir=3;
+						Ciudades[id-1].edificio.edificioAConstruir=3;
 						clickafuera=true;
 						
 					}
@@ -107,13 +107,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						}// para saber numero de click
 						$("#Construir").hide();
 						//seleccionEdif=1;
-						Ciudades[id-1].edificioAConstruir=3;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificioAConstruir);
+						Ciudades[id-1].edificio.edificioAConstruir=3;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificio.edificioAConstruir);
 						if(okConstruccionOrTropa==true){
 							
-							Ciudades[id-1].hayColaConst=true;
+							Ciudades[id-1].edificio.hayColaConst=true;
 							$("#Cancelar").fadeIn(100);
-							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificioRecursoLad);
+							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificio.edificioRecursoLad);
 						}
 						//aqui dibujar
 						
@@ -127,7 +127,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 			
 			if((X>=410&&X<=474&&Y>=280&&Y<=344)){
 				//console.log("metal");
-				if(Ciudades[id-1].hayColaConst==false&&Ciudades[id-1].edificioRecursoMet<=2){
+				if(Ciudades[id-1].edificio.hayColaConst==false&&Ciudades[id-1].edificio.edificioRecursoMet<=2){
 					contadorClick[3]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=3){
@@ -137,7 +137,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[3]==1){
 						$("#Construir").show();
-						Ciudades[id-1].edificioAConstruir=4;
+						Ciudades[id-1].edificio.edificioAConstruir=4;
 						clickafuera=true;
 						
 					}
@@ -147,13 +147,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						}// para saber numero de click
 						$("#Construir").hide();
 						//seleccionEdif=1;
-						Ciudades[id-1].edificioAConstruir=4;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificioAConstruir);
+						Ciudades[id-1].edificio.edificioAConstruir=4;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificio.edificioAConstruir);
 						if(okConstruccionOrTropa==true){
 							
-							Ciudades[id-1].hayColaConst=true;
+							Ciudades[id-1].edificio.hayColaConst=true;
 							$("#Cancelar").fadeIn(100);
-							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificioRecursoMet);
+							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificio.edificioRecursoMet);
 						}
 						//aqui dibujar
 						
@@ -167,7 +167,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 			
 			if((X>=600&&X<=664&&Y>=280&&Y<=344)){
 				//console.log("infanteria");
-			if(Ciudades[id-1].hayColaConst==false&&Ciudades[id-1].edificioTropaInf<=2){
+			if(Ciudades[id-1].edificio.hayColaConst==false&&Ciudades[id-1].edificio.edificioTropaInf<=2){
 					contadorClick[4]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=4){
@@ -177,7 +177,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[4]==1){
 						$("#Construir").show();
-						Ciudades[id-1].edificioAConstruir=5;
+						Ciudades[id-1].edificio.edificioAConstruir=5;
 						clickafuera=true;
 						
 					}
@@ -187,13 +187,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						}// para saber numero de click
 						$("#Construir").hide();
 						//seleccionEdif=1;
-						Ciudades[id-1].edificioAConstruir=5;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificioAConstruir);
+						Ciudades[id-1].edificio.edificioAConstruir=5;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificio.edificioAConstruir);
 						if(okConstruccionOrTropa==true){
 							
-							Ciudades[id-1].hayColaConst=true;
+							Ciudades[id-1].edificio.hayColaConst=true;
 							$("#Cancelar").fadeIn(100);
-							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificioTropaInf);
+							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaInf);
 						}
 						//aqui dibujar
 						
@@ -207,7 +207,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 			
 			if((X>=790&&X<=854&&Y>=280&&Y<=344)){
 				//console.log("arqueria");
-				if(Ciudades[id-1].hayColaConst==false&&Ciudades[id-1].edificioTropaArq<=2){
+				if(Ciudades[id-1].edificio.hayColaConst==false&&Ciudades[id-1].edificio.edificioTropaArq<=2){
 					contadorClick[5]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=5){
@@ -217,7 +217,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[5]==1){
 						$("#Construir").show();
-						Ciudades[id-1].edificioAConstruir=6;
+						Ciudades[id-1].edificio.edificioAConstruir=6;
 						clickafuera=true;
 						
 					}
@@ -227,13 +227,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						}// para saber numero de click
 						$("#Construir").hide();
 						//seleccionEdif=1;
-						Ciudades[id-1].edificioAConstruir=6;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificioAConstruir);
+						Ciudades[id-1].edificio.edificioAConstruir=6;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificio.edificioAConstruir);
 						if(okConstruccionOrTropa==true){
 							
-							Ciudades[id-1].hayColaConst=true;
+							Ciudades[id-1].edificio.hayColaConst=true;
 							$("#Cancelar").fadeIn(100);
-							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificioTropaArq);
+							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaArq);
 						}
 						//aqui dibujar
 						
@@ -247,7 +247,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 			
 			if((X>=600&&X<=664&&Y>=405&&Y<=469)){
 				//console.log("caballeria");
-				if(Ciudades[id-1].hayColaConst==false&&Ciudades[id-1].edificioTropaCab<=2){
+				if(Ciudades[id-1].edificio.hayColaConst==false&&Ciudades[id-1].edificio.edificioTropaCab<=2){
 					contadorClick[6]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=6){
@@ -257,7 +257,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[6]==1){
 						$("#Construir").show();
-						Ciudades[id-1].edificioAConstruir=7;
+						Ciudades[id-1].edificio.edificioAConstruir=7;
 						clickafuera=true;
 						
 					}
@@ -267,13 +267,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						}// para saber numero de click
 						$("#Construir").hide();
 						//seleccionEdif=1;
-						Ciudades[id-1].edificioAConstruir=7;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificioAConstruir);
+						Ciudades[id-1].edificio.edificioAConstruir=7;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].edificio.edificioAConstruir);
 						if(okConstruccionOrTropa==true){
 							
-							Ciudades[id-1].hayColaConst=true;
+							Ciudades[id-1].edificio.hayColaConst=true;
 							$("#Cancelar").fadeIn(100);
-							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificioTropaCab);
+							startTimeConstruir(id,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaCab);
 						}
 						//aqui dibujar
 						
@@ -297,7 +297,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 	
 	if(info==3){
 		if((X>=410&&X<=474&&Y>=155&&Y<=219)){
-				if(Ciudades[id-1].hayColaTropa==false){
+				if(Ciudades[id-1].tropa.hayColaTropa==false){
 					contadorClick[7]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=7){
@@ -307,7 +307,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[7]==1){
 						$("#ReclutarTropas").show();
-						Ciudades[id-1].tropaAAlistar=8;
+						Ciudades[id-1].tropa.tropaAAlistar=8;
 						clickafuera=true;
 						
 					}
@@ -317,14 +317,14 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						}// para saber numero de click
 						$("#ReclutarTropas").hide();
 						//seleccionEdif=1;
-						Ciudades[id-1].tropaAAlistar=8;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropaAAlistar);
+						Ciudades[id-1].tropa.tropaAAlistar=8;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropa.tropaAAlistar);
 						if(okConstruccionOrTropa==true){
 						
-							Ciudades[id-1].hayColaTropa=true;
+							Ciudades[id-1].tropa.hayColaTropa=true;
 							$("#Cancelar").fadeIn(100);
-							Ciudades[id-1].nivelEdiAlInDeRecInf=Ciudades[id-1].edificioTropaInf;
-							startTimeTropa(id,Ciudades[id-1].edificioTropaInf,Ciudades[id-1].tropaAAlistar);
+							Ciudades[id-1].tropa.nivelEdiAlInDeRecInf=Ciudades[id-1].edificio.edificioTropaInf;
+							startTimeTropa(id,Ciudades[id-1].edificio.edificioTropaInf,Ciudades[id-1].tropa.tropaAAlistar);
 						}
 						//aqui dibujar
 						
@@ -342,7 +342,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 			
 			if((X>=600&&X<=664&&Y>=155&&Y<=219)){
 				//console.log("i2");
-				if(Ciudades[id-1].hayColaTropa==false&&Ciudades[id-1].edificioTropaInf>=2){
+				if(Ciudades[id-1].tropa.hayColaTropa==false&&Ciudades[id-1].edificio.edificioTropaInf>=2){
 					contadorClick[8]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=8){
@@ -352,7 +352,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[8]==1){
 						$("#ReclutarTropas").show();
-						Ciudades[id-1].tropaAAlistar=9;
+						Ciudades[id-1].tropa.tropaAAlistar=9;
 						clickafuera=true;
 						
 					}
@@ -363,13 +363,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						$("#ReclutarTropas").hide();
 						//seleccionEdif=1;
 						
-						Ciudades[id-1].tropaAAlistar=9;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropaAAlistar);
+						Ciudades[id-1].tropa.tropaAAlistar=9;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropa.tropaAAlistar);
 						if(okConstruccionOrTropa==true){
-							Ciudades[id-1].hayColaTropa=true;
+							Ciudades[id-1].tropa.hayColaTropa=true;
 							$("#Cancelar").fadeIn(100);
-							Ciudades[id-1].nivelEdiAlInDeRecInf=Ciudades[id-1].edificioTropaInf;
-							startTimeTropa(id,Ciudades[id-1].edificioTropaInf,Ciudades[id-1].tropaAAlistar);
+							Ciudades[id-1].tropa.nivelEdiAlInDeRecInf=Ciudades[id-1].edificio.edificioTropaInf;
+							startTimeTropa(id,Ciudades[id-1].edificio.edificioTropaInf,Ciudades[id-1].tropa.tropaAAlistar);
 						//aqui dibujar
 						}
 					}
@@ -382,7 +382,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 			
 			if((X>=790&&X<=854&&Y>=155&&Y<=219)){
 				//console.log("i3");
-				if(Ciudades[id-1].hayColaTropa==false&&Ciudades[id-1].edificioTropaInf==3){
+				if(Ciudades[id-1].tropa.hayColaTropa==false&&Ciudades[id-1].edificio.edificioTropaInf==3){
 					contadorClick[9]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=9){
@@ -392,7 +392,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[9]==1){
 						$("#ReclutarTropas").show();
-						Ciudades[id-1].tropaAAlistar=10;
+						Ciudades[id-1].tropa.tropaAAlistar=10;
 						clickafuera=true;
 						
 					}
@@ -403,13 +403,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						$("#ReclutarTropas").hide();
 						//seleccionEdif=1;
 						
-						Ciudades[id-1].tropaAAlistar=10;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropaAAlistar);
+						Ciudades[id-1].tropa.tropaAAlistar=10;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropa.tropaAAlistar);
 						if(okConstruccionOrTropa==true){
-							Ciudades[id-1].hayColaTropa=true;
+							Ciudades[id-1].tropa.hayColaTropa=true;
 							$("#Cancelar").fadeIn(100);
-							Ciudades[id-1].nivelEdiAlInDeRecInf=Ciudades[id-1].edificioTropaInf;
-							startTimeTropa(id,Ciudades[id-1].edificioTropaInf,Ciudades[id-1].tropaAAlistar);
+							Ciudades[id-1].tropa.nivelEdiAlInDeRecInf=Ciudades[id-1].edificio.edificioTropaInf;
+							startTimeTropa(id,Ciudades[id-1].edificio.edificioTropaInf,Ciudades[id-1].tropa.tropaAAlistar);
 						//aqui dibujar
 						}
 					}
@@ -422,7 +422,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 			
 			if((X>=410&&X<=474&&Y>=280&&Y<=344)){
 				//console.log("a1");
-				if(Ciudades[id-1].hayColaTropa==false){
+				if(Ciudades[id-1].tropa.hayColaTropa==false){
 					contadorClick[10]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=10){
@@ -432,7 +432,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[10]==1){
 						$("#ReclutarTropas").show();
-						Ciudades[id-1].tropaAAlistar=11;
+						Ciudades[id-1].tropa.tropaAAlistar=11;
 						clickafuera=true;
 						
 					}
@@ -443,13 +443,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						$("#ReclutarTropas").hide();
 						//seleccionEdif=1;
 						
-						Ciudades[id-1].tropaAAlistar=11;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropaAAlistar);
+						Ciudades[id-1].tropa.tropaAAlistar=11;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropa.tropaAAlistar);
 						if(okConstruccionOrTropa==true){
-							Ciudades[id-1].hayColaTropa=true;
+							Ciudades[id-1].tropa.hayColaTropa=true;
 							$("#Cancelar").fadeIn(100);
-							Ciudades[id-1].nivelEdiAlInDeRecArq=Ciudades[id-1].edificioTropaArq;
-							startTimeTropa(id,Ciudades[id-1].edificioTropaArq,Ciudades[id-1].tropaAAlistar);
+							Ciudades[id-1].tropa.nivelEdiAlInDeRecArq=Ciudades[id-1].edificio.edificioTropaArq;
+							startTimeTropa(id,Ciudades[id-1].edificio.edificioTropaArq,Ciudades[id-1].tropa.tropaAAlistar);
 						//aqui dibujar
 						}
 					}
@@ -462,7 +462,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 			
 			if((X>=600&&X<=664&&Y>=280&&Y<=344)){
 				//console.log("a2");
-			if(Ciudades[id-1].hayColaTropa==false&&Ciudades[id-1].edificioTropaArq>=2){
+			if(Ciudades[id-1].tropa.hayColaTropa==false&&Ciudades[id-1].edificio.edificioTropaArq>=2){
 					contadorClick[11]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=11){
@@ -472,7 +472,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[11]==1){
 						$("#ReclutarTropas").show();
-						Ciudades[id-1].tropaAAlistar=12;
+						Ciudades[id-1].tropa.tropaAAlistar=12;
 						clickafuera=true;
 						
 					}
@@ -483,13 +483,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						$("#ReclutarTropas").hide();
 						//seleccionEdif=1;
 						
-						Ciudades[id-1].tropaAAlistar=12;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropaAAlistar);
+						Ciudades[id-1].tropa.tropaAAlistar=12;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropa.tropaAAlistar);
 						if(okConstruccionOrTropa==true){
-							Ciudades[id-1].hayColaTropa=true;
+							Ciudades[id-1].tropa.hayColaTropa=true;
 							$("#Cancelar").fadeIn(100);
-							Ciudades[id-1].nivelEdiAlInDeRecArq=Ciudades[id-1].edificioTropaArq;
-							startTimeTropa(id,Ciudades[id-1].edificioTropaArq,Ciudades[id-1].tropaAAlistar);
+							Ciudades[id-1].tropa.nivelEdiAlInDeRecArq=Ciudades[id-1].edificio.edificioTropaArq;
+							startTimeTropa(id,Ciudades[id-1].edificio.edificioTropaArq,Ciudades[id-1].tropa.tropaAAlistar);
 						//aqui dibujar
 						}
 					}
@@ -502,7 +502,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 			
 			if((X>=790&&X<=854&&Y>=280&&Y<=344)){
 				//console.log("a3");
-				if(Ciudades[id-1].hayColaTropa==false&&Ciudades[id-1].edificioTropaArq==3){
+				if(Ciudades[id-1].tropa.hayColaTropa==false&&Ciudades[id-1].edificio.edificioTropaArq==3){
 					contadorClick[12]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=12){
@@ -512,7 +512,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[12]==1){
 						$("#ReclutarTropas").show();
-						Ciudades[id-1].tropaAAlistar=13;
+						Ciudades[id-1].tropa.tropaAAlistar=13;
 						clickafuera=true;
 						
 					}
@@ -523,13 +523,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						$("#ReclutarTropas").hide();
 						//seleccionEdif=1;
 						
-						Ciudades[id-1].tropaAAlistar=13;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropaAAlistar);
+						Ciudades[id-1].tropa.tropaAAlistar=13;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropa.tropaAAlistar);
 						if(okConstruccionOrTropa==true){
-							Ciudades[id-1].hayColaTropa=true;
+							Ciudades[id-1].tropa.hayColaTropa=true;
 							$("#Cancelar").fadeIn(100);
-							Ciudades[id-1].nivelEdiAlInDeRecArq=Ciudades[id-1].edificioTropaArq;
-							startTimeTropa(id,Ciudades[id-1].edificioTropaArq,Ciudades[id-1].tropaAAlistar);
+							Ciudades[id-1].tropa.nivelEdiAlInDeRecArq=Ciudades[id-1].edificio.edificioTropaArq;
+							startTimeTropa(id,Ciudades[id-1].edificio.edificioTropaArq,Ciudades[id-1].tropa.tropaAAlistar);
 						//aqui dibujar
 						}
 					}
@@ -542,7 +542,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 			
 			if((X>=410&&X<=474&&Y>=405&&Y<=469)){
 				//console.log("c1");
-				if(Ciudades[id-1].hayColaTropa==false){
+				if(Ciudades[id-1].tropa.hayColaTropa==false){
 					contadorClick[13]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=13){
@@ -552,7 +552,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[13]==1){
 						$("#ReclutarTropas").show();
-						Ciudades[id-1].tropaAAlistar=14;
+						Ciudades[id-1].tropa.tropaAAlistar=14;
 						clickafuera=true;
 						
 					}
@@ -563,13 +563,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						$("#ReclutarTropas").hide();
 						//seleccionEdif=1;
 						
-						Ciudades[id-1].tropaAAlistar=14;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropaAAlistar);
+						Ciudades[id-1].tropa.tropaAAlistar=14;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropa.tropaAAlistar);
 						if(okConstruccionOrTropa==true){
-							Ciudades[id-1].hayColaTropa=true;
+							Ciudades[id-1].tropa.hayColaTropa=true;
 							$("#Cancelar").fadeIn(100);
-							Ciudades[id-1].nivelEdiAlInDeRecCab=Ciudades[id-1].edificioTropaCab;
-							startTimeTropa(id,Ciudades[id-1].edificioTropaCab,Ciudades[id-1].tropaAAlistar);
+							Ciudades[id-1].tropa.nivelEdiAlInDeRecCab=Ciudades[id-1].edificio.edificioTropaCab;
+							startTimeTropa(id,Ciudades[id-1].edificio.edificioTropaCab,Ciudades[id-1].tropa.tropaAAlistar);
 						//aqui dibujar
 						}
 					}
@@ -583,7 +583,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 			if((X>=600&&X<=664&&Y>=405&&Y<=469)){
 				//console.log("c2");
-				if(Ciudades[id-1].hayColaTropa==false&&Ciudades[id-1].edificioTropaCab>=2){
+				if(Ciudades[id-1].tropa.hayColaTropa==false&&Ciudades[id-1].edificio.edificioTropaCab>=2){
 					contadorClick[14]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=14){
@@ -593,7 +593,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[14]==1){
 						$("#ReclutarTropas").show();
-						Ciudades[id-1].tropaAAlistar=15;
+						Ciudades[id-1].tropa.tropaAAlistar=15;
 						clickafuera=true;
 						
 					}
@@ -604,13 +604,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						$("#ReclutarTropas").hide();
 						//seleccionEdif=1;
 						
-						Ciudades[id-1].tropaAAlistar=15;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropaAAlistar);
+						Ciudades[id-1].tropa.tropaAAlistar=15;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropa.tropaAAlistar);
 						if(okConstruccionOrTropa==true){
-							Ciudades[id-1].hayColaTropa=true;
+							Ciudades[id-1].tropa.hayColaTropa=true;
 							$("#Cancelar").fadeIn(100);
-							Ciudades[id-1].nivelEdiAlInDeRecCab=Ciudades[id-1].edificioTropaCab;
-							startTimeTropa(id,Ciudades[id-1].edificioTropaCab,Ciudades[id-1].tropaAAlistar);
+							Ciudades[id-1].tropa.nivelEdiAlInDeRecCab=Ciudades[id-1].edificio.edificioTropaCab;
+							startTimeTropa(id,Ciudades[id-1].edificio.edificioTropaCab,Ciudades[id-1].tropa.tropaAAlistar);
 						//aqui dibujar
 						}
 					}
@@ -624,7 +624,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 		
 			if((X>=790&&X<=854&&Y>=405&&Y<=469)){
 				//console.log("c3");
-				if(Ciudades[id-1].hayColaTropa==false&&Ciudades[id-1].edificioTropaCab==3){
+				if(Ciudades[id-1].tropa.hayColaTropa==false&&Ciudades[id-1].edificio.edificioTropaCab==3){
 					contadorClick[15]+=1;
 					for(let co=0;co<16;co++){
 							if(co!=15){
@@ -634,7 +634,7 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 					
 					if(contadorClick[15]==1){
 						$("#ReclutarTropas").show();
-						Ciudades[id-1].tropaAAlistar=16;
+						Ciudades[id-1].tropa.tropaAAlistar=16;
 						clickafuera=true;
 						
 					}
@@ -645,13 +645,13 @@ function seleccionarEdificioConstruirOTropaReclutar(id,info,X,Y){
 						$("#ReclutarTropas").hide();
 						//seleccionEdif=1;
 						
-						Ciudades[id-1].tropaAAlistar=16;
-						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropaAAlistar);
+						Ciudades[id-1].tropa.tropaAAlistar=16;
+						materiasUsarConstruccionYTropas(id,Ciudades[id-1].tropa.tropaAAlistar);
 						if(okConstruccionOrTropa==true){
-							Ciudades[id-1].hayColaTropa=true;
+							Ciudades[id-1].tropa.hayColaTropa=true;
 							$("#Cancelar").fadeIn(100);
-							Ciudades[id-1].nivelEdiAlInDeRecCab=Ciudades[id-1].edificioTropaCab;
-							startTimeTropa(id,Ciudades[id-1].edificioTropaCab,Ciudades[id-1].tropaAAlistar);
+							Ciudades[id-1].tropa.nivelEdiAlInDeRecCab=Ciudades[id-1].edificio.edificioTropaCab;
+							startTimeTropa(id,Ciudades[id-1].edificio.edificioTropaCab,Ciudades[id-1].tropa.tropaAAlistar);
 						//aqui dibujar
 						}
 					}
@@ -680,64 +680,64 @@ function dibujarColaConstruccionYTropas(id,info){
 	var tempEdif=0;
 	var numTropa=0;
 	var tiempos=0;
-	if(info==2&&Ciudades[id-1].hayColaConst==true){
+	if(info==2&&Ciudades[id-1].edificio.hayColaConst==true){
 		contextoCiudad.beginPath();
 		contextoCiudad.font="20pt Verdana";
 		contextoCiudad.fillStyle = "black";
 		
 		
-		switch (Ciudades[id-1].edificioAConstruir) {
+		switch (Ciudades[id-1].edificio.edificioAConstruir) {
 			case 1:	contextoCiudad.drawImage(imgEdifDin,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					tempEdif=Ciudades[id-1].edificioDinero+1;
-					contextoCiudad.fillText(Ciudades[id-1].edificioDinero+" --> "+tempEdif,600,600);
+					tempEdif=Ciudades[id-1].edificio.edificioDinero+1;
+					contextoCiudad.fillText(Ciudades[id-1].edificio.edificioDinero+" --> "+tempEdif,600,600);
 					//startTimeConstruir(id,Ciudades[id-1].edificioDinero);
-					tiempos=Ciudades[id-1].tiempoTerminarC-time;
+					tiempos=Ciudades[id-1].edificio.tiempoTerminarC-time;
 					contextoCiudad.fillText(tiempos,790,600);	
 					break;
 					
 			case 2:	contextoCiudad.drawImage(imgEdifMad,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					tempEdif=Ciudades[id-1].edificioRecursoMad+1;
-					contextoCiudad.fillText(Ciudades[id-1].edificioRecursoMad+" --> "+tempEdif,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarC-time;
+					tempEdif=Ciudades[id-1].edificio.edificioRecursoMad+1;
+					contextoCiudad.fillText(Ciudades[id-1].edificio.edificioRecursoMad+" --> "+tempEdif,600,600);
+					tiempos=Ciudades[id-1].edificio.tiempoTerminarC-time;
 					contextoCiudad.fillText(tiempos,790,600);		
 					
 					break;
 					
 			case 3:	contextoCiudad.drawImage(imgEdifLad,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					tempEdif=Ciudades[id-1].edificioRecursoLad+1;
-					contextoCiudad.fillText(Ciudades[id-1].edificioRecursoLad+" --> "+tempEdif,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarC-time;
+					tempEdif=Ciudades[id-1].edificio.edificioRecursoLad+1;
+					contextoCiudad.fillText(Ciudades[id-1].edificio.edificioRecursoLad+" --> "+tempEdif,600,600);
+					tiempos=Ciudades[id-1].edificio.tiempoTerminarC-time;
 					contextoCiudad.fillText(tiempos,790,600);		
 					
 					break;
 			
 			case 4:	contextoCiudad.drawImage(imgEdifMet,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					tempEdif=Ciudades[id-1].edificioRecursoMet+1;
-					contextoCiudad.fillText(Ciudades[id-1].edificioRecursoMet+" --> "+tempEdif,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarC-time;
+					tempEdif=Ciudades[id-1].edificio.edificioRecursoMet+1;
+					contextoCiudad.fillText(Ciudades[id-1].edificio.edificioRecursoMet+" --> "+tempEdif,600,600);
+					tiempos=Ciudades[id-1].edificio.tiempoTerminarC-time;
 					contextoCiudad.fillText(tiempos,790,600);		
 					break;
 					
 			case 5:	contextoCiudad.drawImage(imgEdifTInf,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					tempEdif=Ciudades[id-1].edificioTropaInf+1;
-					contextoCiudad.fillText(Ciudades[id-1].edificioTropaInf+" --> "+tempEdif,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarC-time;
+					tempEdif=Ciudades[id-1].edificio.edificioTropaInf+1;
+					contextoCiudad.fillText(Ciudades[id-1].edificio.edificioTropaInf+" --> "+tempEdif,600,600);
+					tiempos=Ciudades[id-1].edificio.tiempoTerminarC-time;
 					contextoCiudad.fillText(tiempos,790,600);		
 					
 					break;
 					
 			case 6:	contextoCiudad.drawImage(imgEdifTArq,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					tempEdif=Ciudades[id-1].edificioTropaArq+1;
-					contextoCiudad.fillText(Ciudades[id-1].edificioTropaArq+" --> "+tempEdif,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarC-time;
+					tempEdif=Ciudades[id-1].edificio.edificioTropaArq+1;
+					contextoCiudad.fillText(Ciudades[id-1].edificio.edificioTropaArq+" --> "+tempEdif,600,600);
+					tiempos=Ciudades[id-1].edificio.tiempoTerminarC-time;
 					contextoCiudad.fillText(tiempos,790,600);		
 					
 					break;
 			
 			case 7:	contextoCiudad.drawImage(imgEdifTCab,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					tempEdif=Ciudades[id-1].edificioTropaCab+1;
-					contextoCiudad.fillText(Ciudades[id-1].edificioTropaCab+" --> "+tempEdif,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarC-time;
+					tempEdif=Ciudades[id-1].edificio.edificioTropaCab+1;
+					contextoCiudad.fillText(Ciudades[id-1].edificio.edificioTropaCab+" --> "+tempEdif,600,600);
+					tiempos=Ciudades[id-1].edificio.tiempoTerminarC-time;
 					contextoCiudad.fillText(tiempos,790,600);		
 					
 					break;
@@ -748,95 +748,97 @@ function dibujarColaConstruccionYTropas(id,info){
 		
 		contextoCiudad.fill();
 		contextoCiudad.closePath();
-		if(Ciudades[id-1].hayColaConst==true){
+		if(Ciudades[id-1].edificio.hayColaConst==true){
 			$("#Cancelar").fadeIn(200);
 			}
 	}
 	
-	if(info==3&&Ciudades[id-1].hayColaTropa==true){
+	if(info==3&&Ciudades[id-1].tropa.hayColaTropa==true){
 		contextoCiudad.beginPath();
 		contextoCiudad.font="20pt Verdana";
 		contextoCiudad.fillStyle = "black";
 		
-		switch (Ciudades[id-1].tropaAAlistar) {
+		switch (Ciudades[id-1].tropa.tropaAAlistar) {
 			case 8:	contextoCiudad.drawImage(imgTInf1,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					numTropa=Ciudades[id-1].tropasMinimo*Ciudades[id-1].nivelEdiAlInDeRecInf;
+					numTropa=Ciudades[id-1].tropa.tropasMinimo*Ciudades[id-1].tropa.nivelEdiAlInDeRecInf;
+					//console.log(Ciudades[id-1].tropa.tropasMinimo);
+					//console.log(Ciudades[id-1].tropa.nivelEdiAlInDeRecInf);
 					contextoCiudad.fillText(numTropa,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarT-time;
+					tiempos=Ciudades[id-1].tropa.tiempoTerminarT-time;
 					contextoCiudad.fillText(tiempos,790,600);	
 					break;
 					
 			case 9:	contextoCiudad.drawImage(tropasInf2,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					if(Ciudades[id-1].nivelEdiAlInDeRecInf==2){
-						numTropa=Ciudades[id-1].tropasMinimo;
+					if(Ciudades[id-1].tropa.nivelEdiAlInDeRecInf==2){
+						numTropa=Ciudades[id-1].tropa.tropasMinimo;
 					}else{
-						numTropa=Ciudades[id-1].tropasMinimo*2;
+						numTropa=Ciudades[id-1].tropa.tropasMinimo*2;
 					}
 					contextoCiudad.fillText(numTropa,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarT-time;
+					tiempos=Ciudades[id-1].tropa.tiempoTerminarT-time;
 					contextoCiudad.fillText(tiempos,790,600);		
 					
 					break;
 					
 			case 10: contextoCiudad.drawImage(tropasInf3,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					numTropa=Ciudades[id-1].tropasMinimo;
+					numTropa=Ciudades[id-1].tropa.tropasMinimo;
 					contextoCiudad.fillText(numTropa,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarT-time;
+					tiempos=Ciudades[id-1].tropa.tiempoTerminarT-time;
 					contextoCiudad.fillText(tiempos,790,600);			
 					
 					break;
 			
 			case 11: contextoCiudad.drawImage(imgTArq1,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					numTropa=Ciudades[id-1].tropasMinimo*Ciudades[id-1].nivelEdiAlInDeRecArq;
+					numTropa=Ciudades[id-1].tropa.tropasMinimo*Ciudades[id-1].tropa.nivelEdiAlInDeRecArq;
 					contextoCiudad.fillText(numTropa,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarT-time;
+					tiempos=Ciudades[id-1].tropa.tiempoTerminarT-time;
 					contextoCiudad.fillText(tiempos,790,600);		
 					break;
 					
 			case 12: contextoCiudad.drawImage(imgTArq2,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					if(Ciudades[id-1].nivelEdiAlInDeRecArq==2){
-						numTropa=Ciudades[id-1].tropasMinimo;
+					if(Ciudades[id-1].tropa.nivelEdiAlInDeRecArq==2){
+						numTropa=Ciudades[id-1].tropa.tropasMinimo;
 					}else{
-						numTropa=Ciudades[id-1].tropasMinimo*2;
+						numTropa=Ciudades[id-1].tropa.tropasMinimo*2;
 					}
 					contextoCiudad.fillText(numTropa,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarT-time;
+					tiempos=Ciudades[id-1].tropa.tiempoTerminarT-time;
 					contextoCiudad.fillText(tiempos,790,600);			
 					
 					break;
 					
 			case 13: contextoCiudad.drawImage(imgTArq3,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					numTropa=Ciudades[id-1].tropasMinimo;
+					numTropa=Ciudades[id-1].tropa.tropasMinimo;
 					contextoCiudad.fillText(numTropa,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarT-time;
+					tiempos=Ciudades[id-1].tropa.tiempoTerminarT-time;
 					contextoCiudad.fillText(tiempos,790,600);		
 					
 					break;
 			
 			case 14: contextoCiudad.drawImage(imgTCab1,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					numTropa=Ciudades[id-1].tropasMinimo*Ciudades[id-1].nivelEdiAlInDeRecCab;
+					numTropa=Ciudades[id-1].tropa.tropasMinimo*Ciudades[id-1].tropa.nivelEdiAlInDeRecCab;
 					contextoCiudad.fillText(numTropa,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarT-time;
+					tiempos=Ciudades[id-1].tropa.tiempoTerminarT-time;
 					contextoCiudad.fillText(tiempos,790,600);	
 					
 					break;
 			
 			case 15: contextoCiudad.drawImage(imgTCab2,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					if(Ciudades[id-1].nivelEdiAlInDeRecCab==2){
-						numTropa=Ciudades[id-1].tropasMinimo;
+					if(Ciudades[id-1].tropa.nivelEdiAlInDeRecCab==2){
+						numTropa=Ciudades[id-1].tropa.tropasMinimo;
 					}else{
-						numTropa=Ciudades[id-1].tropasMinimo*2;
+						numTropa=Ciudades[id-1].tropa.tropasMinimo*2;
 					}
 					contextoCiudad.fillText(numTropa,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarT-time;
+					tiempos=Ciudades[id-1].tropa.tiempoTerminarT-time;
 					contextoCiudad.fillText(tiempos,790,600);	
 					
 					break;
 			
 			case 16: contextoCiudad.drawImage(imgTCab3,410,565,64,64);//dibuja edificio en papiro en la ciudad
-					numTropa=Ciudades[id-1].tropasMinimo;
+					numTropa=Ciudades[id-1].tropa.tropasMinimo;
 					contextoCiudad.fillText(numTropa,600,600);
-					tiempos=Ciudades[id-1].tiempoTerminarT-time;
+					tiempos=Ciudades[id-1].tropa.tiempoTerminarT-time;
 					contextoCiudad.fillText(tiempos,790,600);		
 					
 					break;
@@ -846,7 +848,7 @@ function dibujarColaConstruccionYTropas(id,info){
 		
 		contextoCiudad.fill();
 		contextoCiudad.closePath();
-		if(Ciudades[id-1].hayColaTropa==true){
+		if(Ciudades[id-1].tropa.hayColaTropa==true){
 			$("#Cancelar").fadeIn(200);
 			//console.log("holis");
 			}
@@ -861,11 +863,11 @@ function cancelarConstruccionOAlistamiento(id,info,X,Y){
 	//X e Y coordenadas del click
 	if(info==2){
 		if((X>=410&&X<=474&&Y>=565&&Y<=629)){
-			Ciudades[id-1].hayColaConst=false;
+			Ciudades[id-1].edificio.hayColaConst=false;
 			$("#Cancelar").hide();
-			Ciudades[id-1].tiempoTerminarC=0;
+			Ciudades[id-1].edificio.tiempoTerminarC=0;
 			//quitar tiempo a 0
-			devolverRecursos(id,Ciudades[id-1].edificioAConstruir);
+			devolverRecursos(id,Ciudades[id-1].edificio.edificioAConstruir);
 			//devolver materiales
 		}
 		
@@ -874,10 +876,10 @@ function cancelarConstruccionOAlistamiento(id,info,X,Y){
 	if(info==3){
 		if((X>=410&&X<=474&&Y>=565&&Y<=629)){
 			$("#Cancelar").hide();
-			Ciudades[id-1].hayColaTropa=false;
-			Ciudades[id-1].tiempoTerminarT=0;
+			Ciudades[id-1].tropa.hayColaTropa=false;
+			Ciudades[id-1].tropa.tiempoTerminarT=0;
 			//quitar tiempo a 0
-			devolverRecursos(id,Ciudades[id-1].tropaAAlistar);
+			devolverRecursos(id,Ciudades[id-1].tropa.tropaAAlistar);
 			//devolver materiales
 		}
 	}
@@ -895,7 +897,7 @@ function startTime2() {
 
 function startTimeConstruir(id,nivel) {
 	var today2=new Date();//tiempo del juego
-	Ciudades[id-1].tiempoTerminarC=today2.getTime()+Ciudades[id-1].tiempoConstruir*nivel*1000;
+	Ciudades[id-1].edificio.tiempoTerminarC=today2.getTime()+Ciudades[id-1].edificio.tiempoConstruir*nivel*1000;
 	// INFO para saber si estamos en info, construir o reclutar en el papiro, id para saber ciudad
 		
 }
@@ -905,37 +907,37 @@ function startTimeTropa(id,nivel,tropa) {
 	var today3=new Date();//tiempo del juego
 	switch (tropa) {
 			case 8:	
-				Ciudades[id-1].tiempoTerminarT=today3.getTime()+Ciudades[id-1].tiempoTropasInf*1000*nivel;
+				Ciudades[id-1].tropa.tiempoTerminarT=today3.getTime()+Ciudades[id-1].tropa.tiempoTropasInf*1000*nivel;
 			
 					break;
 					
-			case 9:	Ciudades[id-1].tiempoTerminarT=today3.getTime()+Ciudades[id-1].tiempoTropasInf*1000*(nivel-1);
+			case 9:	Ciudades[id-1].tropa.tiempoTerminarT=today3.getTime()+Ciudades[id-1].tropa.tiempoTropasInf*1000*(nivel-1);
 					break;
 					
-			case 10: Ciudades[id-1].tiempoTerminarT=today3.getTime()+Ciudades[id-1].tiempoTropasInf*1000;
+			case 10: Ciudades[id-1].tropa.tiempoTerminarT=today3.getTime()+Ciudades[id-1].tropa.tiempoTropasInf*1000;
 			
 					break;
 			
-			case 11: Ciudades[id-1].tiempoTerminarT=today3.getTime()+Ciudades[id-1].tiempoTropasArq*1000*nivel;
+			case 11: Ciudades[id-1].tropa.tiempoTerminarT=today3.getTime()+Ciudades[id-1].tropa.tiempoTropasArq*1000*nivel;
 					break;
 					
-			case 12: Ciudades[id-1].tiempoTerminarT=today3.getTime()+Ciudades[id-1].tiempoTropasArq*1000*(nivel-1);
+			case 12: Ciudades[id-1].tropa.tiempoTerminarT=today3.getTime()+Ciudades[id-1].tropa.tiempoTropasArq*1000*(nivel-1);
 					
 					break;
 					
-			case 13: Ciudades[id-1].tiempoTerminarT=today3.getTime()+Ciudades[id-1].tiempoTropasArq*1000;
-					
-					break;
-			
-			case 14: Ciudades[id-1].tiempoTerminarT=today3.getTime()+Ciudades[id-1].tiempoTropasCab*1000*nivel;
+			case 13: Ciudades[id-1].tropa.tiempoTerminarT=today3.getTime()+Ciudades[id-1].tropa.tiempoTropasArq*1000;
 					
 					break;
 			
-			case 15: Ciudades[id-1].tiempoTerminarT=today3.getTime()+Ciudades[id-1].tiempoTropasCab*1000*(nivel-1);
+			case 14: Ciudades[id-1].tropa.tiempoTerminarT=today3.getTime()+Ciudades[id-1].tropa.tiempoTropasCab*1000*nivel;
 					
 					break;
 			
-			case 16: Ciudades[id-1].tiempoTerminarT=today3.getTime()+Ciudades[id-1].tiempoTropasCab*1000;
+			case 15: Ciudades[id-1].tropa.tiempoTerminarT=today3.getTime()+Ciudades[id-1].tropa.tiempoTropasCab*1000*(nivel-1);
+					
+					break;
+			
+			case 16: Ciudades[id-1].tropa.tiempoTerminarT=today3.getTime()+Ciudades[id-1].tropa.tiempoTropasCab*1000;
 					
 					break;
 					
@@ -956,65 +958,65 @@ function materiasUsarConstruccionYTropas(id,tipo){
 	var metal=0;
 	switch (tipo) {
 		
-			case 1:	dinero=200*Ciudades[id-1].edificioDinero;madera=200*Ciudades[id-1].edificioDinero;ladrillos=200*Ciudades[id-1].edificioDinero;metal=200*Ciudades[id-1].edificioDinero;
+			case 1:	dinero=200*Ciudades[id-1].edificio.edificioDinero;madera=200*Ciudades[id-1].edificio.edificioDinero;ladrillos=200*Ciudades[id-1].edificio.edificioDinero;metal=200*Ciudades[id-1].edificio.edificioDinero;
 							
 					break;
 					
-			case 2:	dinero=200*Ciudades[id-1].edificioRecursoMad;madera=200*Ciudades[id-1].edificioRecursoMad;ladrillos=100*Ciudades[id-1].edificioRecursoMad;metal=100*Ciudades[id-1].edificioRecursoMad;
+			case 2:	dinero=200*Ciudades[id-1].edificio.edificioRecursoMad;madera=200*Ciudades[id-1].edificio.edificioRecursoMad;ladrillos=100*Ciudades[id-1].edificio.edificioRecursoMad;metal=100*Ciudades[id-1].edificio.edificioRecursoMad;
 					break;
 					
-			case 3: dinero=200*Ciudades[id-1].edificioRecursoLad;madera=100*Ciudades[id-1].edificioRecursoLad;ladrillos=200*Ciudades[id-1].edificioRecursoLad;metal=100*Ciudades[id-1].edificioRecursoLad;
+			case 3: dinero=200*Ciudades[id-1].edificio.edificioRecursoLad;madera=100*Ciudades[id-1].edificio.edificioRecursoLad;ladrillos=200*Ciudades[id-1].edificio.edificioRecursoLad;metal=100*Ciudades[id-1].edificio.edificioRecursoLad;
 			
 					break;
 			
-			case 4: dinero=200*Ciudades[id-1].edificioRecursoMet;madera=100*Ciudades[id-1].edificioRecursoMet;ladrillos=100*Ciudades[id-1].edificioRecursoMet;metal=200*Ciudades[id-1].edificioRecursoMet;
+			case 4: dinero=200*Ciudades[id-1].edificio.edificioRecursoMet;madera=100*Ciudades[id-1].edificio.edificioRecursoMet;ladrillos=100*Ciudades[id-1].edificio.edificioRecursoMet;metal=200*Ciudades[id-1].edificio.edificioRecursoMet;
 					break;
 					
-			case 5: dinero=200*Ciudades[id-1].edificioTropaInf;madera=200*Ciudades[id-1].edificioTropaInf;ladrillos=200*Ciudades[id-1].edificioTropaInf;metal=100*Ciudades[id-1].edificioTropaInf;
+			case 5: dinero=200*Ciudades[id-1].edificio.edificioTropaInf;madera=200*Ciudades[id-1].edificio.edificioTropaInf;ladrillos=200*Ciudades[id-1].edificio.edificioTropaInf;metal=100*Ciudades[id-1].edificio.edificioTropaInf;
 					
 					break;
 					
-			case 6: dinero=200*Ciudades[id-1].edificioTropaArq;madera=200*Ciudades[id-1].edificioTropaArq;ladrillos=100*Ciudades[id-1].edificioTropaArq;metal=200*Ciudades[id-1].edificioTropaArq;
-					
-					break;
-			
-			case 7: dinero=200*Ciudades[id-1].edificioTropaCab;madera=100*Ciudades[id-1].edificioTropaCab;ladrillos=200*Ciudades[id-1].edificioTropaCab;metal=200*Ciudades[id-1].edificioTropaCab;
+			case 6: dinero=200*Ciudades[id-1].edificio.edificioTropaArq;madera=200*Ciudades[id-1].edificio.edificioTropaArq;ladrillos=100*Ciudades[id-1].edificio.edificioTropaArq;metal=200*Ciudades[id-1].edificio.edificioTropaArq;
 					
 					break;
 			
+			case 7: dinero=200*Ciudades[id-1].edificio.edificioTropaCab;madera=100*Ciudades[id-1].edificio.edificioTropaCab;ladrillos=200*Ciudades[id-1].edificio.edificioTropaCab;metal=200*Ciudades[id-1].edificio.edificioTropaCab;
+					
+					break;
 			
-			case 8:	dinero=100*Ciudades[id-1].edificioTropaInf;madera=20*Ciudades[id-1].edificioTropaInf;ladrillos=20*Ciudades[id-1].edificioTropaInf;metal=10*Ciudades[id-1].edificioTropaInf;
+			
+			case 8:	dinero=100*Ciudades[id-1].edificio.edificioTropaInf;madera=20*Ciudades[id-1].edificio.edificioTropaInf;ladrillos=20*Ciudades[id-1].edificio.edificioTropaInf;metal=10*Ciudades[id-1].edificio.edificioTropaInf;
 				
 			
 					break;
 					
-			case 9:	dinero=200*(Ciudades[id-1].edificioTropaInf-1);madera=40*(Ciudades[id-1].edificioTropaInf-1);ladrillos=40*(Ciudades[id-1].edificioTropaInf-1);metal=20*(Ciudades[id-1].edificioTropaInf-1);
+			case 9:	dinero=200*(Ciudades[id-1].edificio.edificioTropaInf-1);madera=40*(Ciudades[id-1].edificio.edificioTropaInf-1);ladrillos=40*(Ciudades[id-1].edificio.edificioTropaInf-1);metal=20*(Ciudades[id-1].edificio.edificioTropaInf-1);
 					break;
 					
-			case 10: dinero=300*(Ciudades[id-1].edificioTropaInf-2);madera=60*(Ciudades[id-1].edificioTropaInf-2);ladrillos=60*(Ciudades[id-1].edificioTropaInf2);metal=30*(Ciudades[id-1].edificioTropaInf-2);
+			case 10: dinero=300*(Ciudades[id-1].edificio.edificioTropaInf-2);madera=60*(Ciudades[id-1].edificio.edificioTropaInf-2);ladrillos=60*(Ciudades[id-1].edificio.edificioTropaInf2);metal=30*(Ciudades[id-1].edificio.edificioTropaInf-2);
 			
 					break;
 			
-			case 11: dinero=120*Ciudades[id-1].edificioTropaArq;madera=20*Ciudades[id-1].edificioTropaArq;ladrillos=10*Ciudades[id-1].edificioTropaArq;metal=20*Ciudades[id-1].edificioTropaArq;
+			case 11: dinero=120*Ciudades[id-1].edificio.edificioTropaArq;madera=20*Ciudades[id-1].edificio.edificioTropaArq;ladrillos=10*Ciudades[id-1].edificio.edificioTropaArq;metal=20*Ciudades[id-1].edificio.edificioTropaArq;
 					break;
 					
-			case 12: dinero=240*(Ciudades[id-1].edificioTropaArq-1);madera=40*(Ciudades[id-1].edificioTropaArq-1);ladrillos=20*(Ciudades[id-1].edificioTropaArq-1);metal=40*(Ciudades[id-1].edificioTropaArq-1);
+			case 12: dinero=240*(Ciudades[id-1].edificio.edificioTropaArq-1);madera=40*(Ciudades[id-1].edificio.edificioTropaArq-1);ladrillos=20*(Ciudades[id-1].edificio.edificioTropaArq-1);metal=40*(Ciudades[id-1].edificio.edificioTropaArq-1);
 					
 					break;
 					
-			case 13: dinero=360*(Ciudades[id-1].edificioTropaArq-2);madera=60*(Ciudades[id-1].edificioTropaArq-2);ladrillos=30*(Ciudades[id-1].edificioTropaArq-2);metal=60*(Ciudades[id-1].edificioTropaArq-2);
-					
-					break;
-			
-			case 14: dinero=140*Ciudades[id-1].edificioTropaCab;madera=10*Ciudades[id-1].edificioTropaCab;ladrillos=20*Ciudades[id-1].edificioTropaCab;metal=20*Ciudades[id-1].edificioTropaCab;
+			case 13: dinero=360*(Ciudades[id-1].edificio.edificioTropaArq-2);madera=60*(Ciudades[id-1].edificio.edificioTropaArq-2);ladrillos=30*(Ciudades[id-1].edificio.edificioTropaArq-2);metal=60*(Ciudades[id-1].edificio.edificioTropaArq-2);
 					
 					break;
 			
-			case 15: dinero=280*(Ciudades[id-1].edificioTropaCab-1);madera=20*(Ciudades[id-1].edificioTropaCab-1);ladrillos=40*(Ciudades[id-1].edificioTropaCab-1);metal=40*(Ciudades[id-1].edificioTropaCab-1);
+			case 14: dinero=140*Ciudades[id-1].edificio.edificioTropaCab;madera=10*Ciudades[id-1].edificio.edificioTropaCab;ladrillos=20*Ciudades[id-1].edificio.edificioTropaCab;metal=20*Ciudades[id-1].edificio.edificioTropaCab;
 					
 					break;
 			
-			case 16: dinero=420*(Ciudades[id-1].edificioTropaCab-2);madera=40*(Ciudades[id-1].edificioTropaCab-2);ladrillos=80*(Ciudades[id-1].edificioTropaCab-2);metal=80*(Ciudades[id-1].edificioTropaCab-2);
+			case 15: dinero=280*(Ciudades[id-1].edificio.edificioTropaCab-1);madera=20*(Ciudades[id-1].edificio.edificioTropaCab-1);ladrillos=40*(Ciudades[id-1].edificio.edificioTropaCab-1);metal=40*(Ciudades[id-1].edificio.edificioTropaCab-1);
+					
+					break;
+			
+			case 16: dinero=420*(Ciudades[id-1].edificio.edificioTropaCab-2);madera=40*(Ciudades[id-1].edificio.edificioTropaCab-2);ladrillos=80*(Ciudades[id-1].edificio.edificioTropaCab-2);metal=80*(Ciudades[id-1].edificio.edificioTropaCab-2);
 					
 					break;
 					
@@ -1024,6 +1026,7 @@ function materiasUsarConstruccionYTropas(id,tipo){
 	restarMateriales(dinero,madera,ladrillos,metal);	
 		
 }
+
 
 function restarMateriales(din,mad,lad,met){
 	
@@ -1044,6 +1047,7 @@ function restarMateriales(din,mad,lad,met){
 	
 }
 
+
 function devolverRecursos(id,tipo){
 	var dinero=0;
 	var madera=0;
@@ -1051,65 +1055,65 @@ function devolverRecursos(id,tipo){
 	var metal=0;
 	switch (tipo) {
 		
-			case 1:	dinero=200*Ciudades[id-1].edificioDinero;madera=200*Ciudades[id-1].edificioDinero;ladrillos=200*Ciudades[id-1].edificioDinero;metal=200*Ciudades[id-1].edificioDinero;
+			case 1:	dinero=200*Ciudades[id-1].edificio.edificioDinero;madera=200*Ciudades[id-1].edificio.edificioDinero;ladrillos=200*Ciudades[id-1].edificio.edificioDinero;metal=200*Ciudades[id-1].edificio.edificioDinero;
 							
 					break;
 					
-			case 2:	dinero=200*Ciudades[id-1].edificioRecursoMad;madera=200*Ciudades[id-1].edificioRecursoMad;ladrillos=100*Ciudades[id-1].edificioRecursoMad;metal=100*Ciudades[id-1].edificioRecursoMad;
+			case 2:	dinero=200*Ciudades[id-1].edificio.edificioRecursoMad;madera=200*Ciudades[id-1].edificio.edificioRecursoMad;ladrillos=100*Ciudades[id-1].edificio.edificioRecursoMad;metal=100*Ciudades[id-1].edificio.edificioRecursoMad;
 					break;
 					
-			case 3: dinero=200*Ciudades[id-1].edificioRecursoLad;madera=100*Ciudades[id-1].edificioRecursoLad;ladrillos=200*Ciudades[id-1].edificioRecursoLad;metal=100*Ciudades[id-1].edificioRecursoLad;
+			case 3: dinero=200*Ciudades[id-1].edificio.edificioRecursoLad;madera=100*Ciudades[id-1].edificio.edificioRecursoLad;ladrillos=200*Ciudades[id-1].edificio.edificioRecursoLad;metal=100*Ciudades[id-1].edificio.edificioRecursoLad;
 			
 					break;
 			
-			case 4: dinero=200*Ciudades[id-1].edificioRecursoMet;madera=100*Ciudades[id-1].edificioRecursoMet;ladrillos=100*Ciudades[id-1].edificioRecursoMet;metal=200*Ciudades[id-1].edificioRecursoMet;
+			case 4: dinero=200*Ciudades[id-1].edificio.edificioRecursoMet;madera=100*Ciudades[id-1].edificio.edificioRecursoMet;ladrillos=100*Ciudades[id-1].edificio.edificioRecursoMet;metal=200*Ciudades[id-1].edificio.edificioRecursoMet;
 					break;
 					
-			case 5: dinero=200*Ciudades[id-1].edificioTropaInf;madera=200*Ciudades[id-1].edificioTropaInf;ladrillos=200*Ciudades[id-1].edificioTropaInf;metal=100*Ciudades[id-1].edificioTropaInf;
+			case 5: dinero=200*Ciudades[id-1].edificio.edificioTropaInf;madera=200*Ciudades[id-1].edificio.edificioTropaInf;ladrillos=200*Ciudades[id-1].edificio.edificioTropaInf;metal=100*Ciudades[id-1].edificio.edificioTropaInf;
 					
 					break;
 					
-			case 6: dinero=200*Ciudades[id-1].edificioTropaArq;madera=200*Ciudades[id-1].edificioTropaArq;ladrillos=100*Ciudades[id-1].edificioTropaArq;metal=200*Ciudades[id-1].edificioTropaArq;
-					
-					break;
-			
-			case 7: dinero=200*Ciudades[id-1].edificioTropaCab;madera=100*Ciudades[id-1].edificioTropaCab;ladrillos=200*Ciudades[id-1].edificioTropaCab;metal=200*Ciudades[id-1].edificioTropaCab;
+			case 6: dinero=200*Ciudades[id-1].edificio.edificioTropaArq;madera=200*Ciudades[id-1].edificio.edificioTropaArq;ladrillos=100*Ciudades[id-1].edificio.edificioTropaArq;metal=200*Ciudades[id-1].edificio.edificioTropaArq;
 					
 					break;
 			
+			case 7: dinero=200*Ciudades[id-1].edificio.edificioTropaCab;madera=100*Ciudades[id-1].edificio.edificioTropaCab;ladrillos=200*Ciudades[id-1].edificio.edificioTropaCab;metal=200*Ciudades[id-1].edificio.edificioTropaCab;
+					
+					break;
 			
-			case 8:	dinero=100*Ciudades[id-1].nivelEdiAlInDeRecInf;madera=20*Ciudades[id-1].nivelEdiAlInDeRecInf;ladrillos=20*Ciudades[id-1].nivelEdiAlInDeRecInf;metal=10*Ciudades[id-1].nivelEdiAlInDeRecInf;
+			
+			case 8:	dinero=100*Ciudades[id-1].tropa.nivelEdiAlInDeRecInf;madera=20*Ciudades[id-1].tropa.nivelEdiAlInDeRecInf;ladrillos=20*Ciudades[id-1].tropa.nivelEdiAlInDeRecInf;metal=10*Ciudades[id-1].tropa.nivelEdiAlInDeRecInf;
 				
 			
 					break;
 					
-			case 9:	dinero=200*(Ciudades[id-1].nivelEdiAlInDeRecInf-1);madera=40*(Ciudades[id-1].nivelEdiAlInDeRecInf-1);ladrillos=40*(Ciudades[id-1].nivelEdiAlInDeRecInf-1);metal=20*(Ciudades[id-1].nivelEdiAlInDeRecInf-1);
+			case 9:	dinero=200*(Ciudades[id-1].tropa.nivelEdiAlInDeRecInf-1);madera=40*(Ciudades[id-1].tropa.nivelEdiAlInDeRecInf-1);ladrillos=40*(Ciudades[id-1].tropa.nivelEdiAlInDeRecInf-1);metal=20*(Ciudades[id-1].tropa.nivelEdiAlInDeRecInf-1);
 					break;
 					
-			case 10: dinero=300*(Ciudades[id-1].nivelEdiAlInDeRecInf-2);madera=60*(Ciudades[id-1].nivelEdiAlInDeRecInf-2);ladrillos=60*(Ciudades[id-1].nivelEdiAlInDeRecInf-2);metal=30*(Ciudades[id-1].nivelEdiAlInDeRecInf-2);
+			case 10: dinero=300*(Ciudades[id-1].tropa.nivelEdiAlInDeRecInf-2);madera=60*(Ciudades[id-1].tropa.nivelEdiAlInDeRecInf-2);ladrillos=60*(Ciudades[id-1].tropa.nivelEdiAlInDeRecInf-2);metal=30*(Ciudades[id-1].tropa.nivelEdiAlInDeRecInf-2);
 			
 					break;
 			
-			case 11: dinero=120*Ciudades[id-1].nivelEdiAlInDeRecArq;madera=20*Ciudades[id-1].nivelEdiAlInDeRecArq;ladrillos=10*Ciudades[id-1].nivelEdiAlInDeRecArq;metal=20*Ciudades[id-1].nivelEdiAlInDeRecArq;
+			case 11: dinero=120*Ciudades[id-1].tropa.nivelEdiAlInDeRecArq;madera=20*Ciudades[id-1].tropa.nivelEdiAlInDeRecArq;ladrillos=10*Ciudades[id-1].tropa.nivelEdiAlInDeRecArq;metal=20*Ciudades[id-1].tropa.nivelEdiAlInDeRecArq;
 					break;
 					
-			case 12: dinero=240*(Ciudades[id-1].nivelEdiAlInDeRecArq-1);madera=40*(Ciudades[id-1].nivelEdiAlInDeRecArq-1);ladrillos=20*(Ciudades[id-1].nivelEdiAlInDeRecArq-1);metal=40*(Ciudades[id-1].nivelEdiAlInDeRecArq-1);
+			case 12: dinero=240*(Ciudades[id-1].tropa.nivelEdiAlInDeRecArq-1);madera=40*(Ciudades[id-1].tropa.nivelEdiAlInDeRecArq-1);ladrillos=20*(Ciudades[id-1].tropa.nivelEdiAlInDeRecArq-1);metal=40*(Ciudades[id-1].tropa.nivelEdiAlInDeRecArq-1);
 					
 					break;
 					
-			case 13: dinero=360*(Ciudades[id-1].nivelEdiAlInDeRecArq-2);madera=60*(Ciudades[id-1].nivelEdiAlInDeRecArq-2);ladrillos=30*(Ciudades[id-1].nivelEdiAlInDeRecArq-2);metal=60*(Ciudades[id-1].nivelEdiAlInDeRecArq-2);
-					
-					break;
-			
-			case 14: dinero=140*Ciudades[id-1].nivelEdiAlInDeRecCab;madera=10*Ciudades[id-1].nivelEdiAlInDeRecCab;ladrillos=20*Ciudades[id-1].nivelEdiAlInDeRecCab;metal=20*Ciudades[id-1].nivelEdiAlInDeRecCab;
+			case 13: dinero=360*(Ciudades[id-1].tropa.nivelEdiAlInDeRecArq-2);madera=60*(Ciudades[id-1].tropa.nivelEdiAlInDeRecArq-2);ladrillos=30*(Ciudades[id-1].tropa.nivelEdiAlInDeRecArq-2);metal=60*(Ciudades[id-1].tropa.nivelEdiAlInDeRecArq-2);
 					
 					break;
 			
-			case 15: dinero=280*(Ciudades[id-1].nivelEdiAlInDeRecCab-1);madera=20*(Ciudades[id-1].nivelEdiAlInDeRecCab-1);ladrillos=40*(Ciudades[id-1].nivelEdiAlInDeRecCab-1);metal=40*(Ciudades[id-1].nivelEdiAlInDeRecCab-1);
+			case 14: dinero=140*Ciudades[id-1].tropa.nivelEdiAlInDeRecCab;madera=10*Ciudades[id-1].tropa.nivelEdiAlInDeRecCab;ladrillos=20*Ciudades[id-1].tropa.nivelEdiAlInDeRecCab;metal=20*Ciudades[id-1].tropa.nivelEdiAlInDeRecCab;
 					
 					break;
 			
-			case 16: dinero=420*(Ciudades[id-1].nivelEdiAlInDeRecCab-2);madera=40*(Ciudades[id-1].nivelEdiAlInDeRecCab-2);ladrillos=80*(Ciudades[id-1].nivelEdiAlInDeRecCab-2);metal=80*(Ciudades[id-1].nivelEdiAlInDeRecCab-2);
+			case 15: dinero=280*(Ciudades[id-1].tropa.nivelEdiAlInDeRecCab-1);madera=20*(Ciudades[id-1].tropa.nivelEdiAlInDeRecCab-1);ladrillos=40*(Ciudades[id-1].tropa.nivelEdiAlInDeRecCab-1);metal=40*(Ciudades[id-1].tropa.nivelEdiAlInDeRecCab-1);
+					
+					break;
+			
+			case 16: dinero=420*(Ciudades[id-1].tropa.nivelEdiAlInDeRecCab-2);madera=40*(Ciudades[id-1].tropa.nivelEdiAlInDeRecCab-2);ladrillos=80*(Ciudades[id-1].tropa.nivelEdiAlInDeRecCab-2);metal=80*(Ciudades[id-1].tropa.nivelEdiAlInDeRecCab-2);
 					
 					break;
 					
@@ -1127,6 +1131,7 @@ function devolverRecursos(id,tipo){
 	numMetal=tempMet;
 }
 
+
 function produccionRecursos(){
 	var tiempoP=0;
 	
@@ -1135,22 +1140,22 @@ function produccionRecursos(){
 			
 		if(Ciudades[p].pertenencia==1){
 			//
-			if(Ciudades[p].tiempoTerminarPro==0){
+			if(Ciudades[p].produccion.tiempoTerminarPro==0){
 				var today3=new Date();//tiempo del juego
-				Ciudades[p].tiempoTerminarPro=today3.getTime()+Ciudades[p].tiempoProduccion*1000;
+				Ciudades[p].produccion.tiempoTerminarPro=today3.getTime()+Ciudades[p].produccion.tiempoProduccion*1000;
 			}else{
-				if(Ciudades[p].tiempoPausadoPro==0){
-					tiempoP=Ciudades[p].tiempoTerminarPro-time;
+				if(Ciudades[p].produccion.tiempoPausadoPro==0){
+					tiempoP=Ciudades[p].produccion.tiempoTerminarPro-time;
 					if(tiempoP<=0){
-						Dinero+=(Ciudades[p].prodDinero*Ciudades[p].edificioDinero);
-						numMadera+=(Ciudades[p].prodRecursoMad*Ciudades[p].edificioRecursoMad);
-						numLadrillos+=(Ciudades[p].prodRecursoLad*Ciudades[p].edificioRecursoLad);
-						numMetal+=(Ciudades[p].prodRecursoMet*Ciudades[p].edificioRecursoMet);
-						Ciudades[p].tiempoTerminarPro=0;
+						Dinero+=(Ciudades[p].produccion.prodDinero*Ciudades[p].edificio.edificioDinero);
+						numMadera+=(Ciudades[p].produccion.prodRecursoMad*Ciudades[p].edificio.edificioRecursoMad);
+						numLadrillos+=(Ciudades[p].produccion.prodRecursoLad*Ciudades[p].edificio.edificioRecursoLad);
+						numMetal+=(Ciudades[p].produccion.prodRecursoMet*Ciudades[p].edificio.edificioRecursoMet);
+						Ciudades[p].produccion.tiempoTerminarPro=0;
 					}
 				}else{
 					var today31=new Date();//tiempo del juego
-					Ciudades[p].tiempoTerminarPro=Ciudades[p].tiempoPausadoPro+today31.getTime();
+					Ciudades[p].produccion.tiempoTerminarPro=Ciudades[p].produccion.tiempoPausadoPro+today31.getTime();
 					
 				}
 				
@@ -1163,6 +1168,7 @@ function produccionRecursos(){
 		
 }
 
+
 function construirFinal(){
 	var tiempoC=0;
 	
@@ -1170,46 +1176,46 @@ function construirFinal(){
 		
 		if(Ciudades[cf].pertenencia==1){
 			
-			if(Ciudades[cf].tiempoTerminarC!=0){
+			if(Ciudades[cf].edificio.tiempoTerminarC!=0){
 			
-				if(Ciudades[cf].tiempoPausadoCons==0){
-					tiempoC=Ciudades[cf].tiempoTerminarC-time;
+				if(Ciudades[cf].edificio.tiempoPausadoCons==0){
+					tiempoC=Ciudades[cf].edificio.tiempoTerminarC-time;
 			
 					if(tiempoC<=0){
-						switch (Ciudades[cf].edificioAConstruir) {
-							case 1:	Ciudades[cf].edificioDinero+=1;							
+						switch (Ciudades[cf].edificio.edificioAConstruir) {
+							case 1:	Ciudades[cf].edificio.edificioDinero+=1;							
 									break;
 									
-							case 2:	Ciudades[cf].edificioRecursoMad+=1;
+							case 2:	Ciudades[cf].edificio.edificioRecursoMad+=1;
 									break;
 									
-							case 3: Ciudades[cf].edificioRecursoLad+=1;						
+							case 3: Ciudades[cf].edificio.edificioRecursoLad+=1;						
 									break;
 							
-							case 4: Ciudades[cf].edificioRecursoMet+=1;
+							case 4: Ciudades[cf].edificio.edificioRecursoMet+=1;
 									break;
 									
-							case 5: Ciudades[cf].edificioTropaInf+=1;								
+							case 5: Ciudades[cf].edificio.edificioTropaInf+=1;								
 									break;
 									
-							case 6: Ciudades[cf].edificioTropaArq+=1;								
+							case 6: Ciudades[cf].edificio.edificioTropaArq+=1;								
 									break;
 							
-							case 7: Ciudades[cf].edificioTropaCab+=1;								
+							case 7: Ciudades[cf].edificio.edificioTropaCab+=1;								
 									break;
 							
 							default: break;
 						}
 						
-						Ciudades[cf].tiempoTerminarC=0;
-						Ciudades[cf].hayColaConst=false;
+						Ciudades[cf].edificio.tiempoTerminarC=0;
+						Ciudades[cf].edificio.hayColaConst=false;
 						//$("#Cancelar").hide();
 						
 						
 					}
 				}else{
 					var today51=new Date();//tiempo del juego
-					Ciudades[cf].tiempoTerminarC=Ciudades[cf].tiempoPausadoCons+today51.getTime();
+					Ciudades[cf].edificio.tiempoTerminarC=Ciudades[cf].edificio.tiempoPausadoCons+today51.getTime();
 				}
 				
 			}
@@ -1222,6 +1228,7 @@ function construirFinal(){
 	
 }
 
+
 function reclutarFinal(){
 	var tiempoR=0;
 	
@@ -1229,46 +1236,46 @@ function reclutarFinal(){
 		
 		if(Ciudades[rf].pertenencia==1){
 			
-			if(Ciudades[rf].tiempoTerminarT!=0){
-				if(Ciudades[rf].tiempoPausadoRec==0){
-					tiempoR=Ciudades[rf].tiempoTerminarT-time;
+			if(Ciudades[rf].tropa.tiempoTerminarT!=0){
+				if(Ciudades[rf].tropa.tiempoPausadoRec==0){
+					tiempoR=Ciudades[rf].tropa.tiempoTerminarT-time;
 			
 					if(tiempoR<=0){
-						switch (Ciudades[rf].tropaAAlistar) {
-							case 8:	tropasInf1+=(Ciudades[rf].tropasMinimo*Ciudades[rf].nivelEdiAlInDeRecInf);										
+						switch (Ciudades[rf].tropa.tropaAAlistar) {
+							case 8:	tropasInf1+=(Ciudades[rf].tropa.tropasMinimo*Ciudades[rf].tropa.nivelEdiAlInDeRecInf);										
 									break;
 									
-							case 9:	if(Ciudades[rf].nivelEdiAlInDeRecInf==2){
-										tropasInf2+=Ciudades[rf].tropasMinimo;
+							case 9:	if(Ciudades[rf].tropa.nivelEdiAlInDeRecInf==2){
+										tropasInf2+=Ciudades[rf].tropa.tropasMinimo;
 									}else{
-										tropasInf2+=(Ciudades[rf].tropasMinimo*2);
+										tropasInf2+=(Ciudades[rf].tropa.tropasMinimo*2);
 									}					
 									break;
 									
-							case 10: tropasInf3+=Ciudades[rf].tropasMinimo;								
+							case 10: tropasInf3+=Ciudades[rf].tropa.tropasMinimo;								
 									break;
-							case 11: tropasArq1+=(Ciudades[rf].tropasMinimo*Ciudades[rf].nivelEdiAlInDeRecArq);									
+							case 11: tropasArq1+=(Ciudades[rf].tropa.tropasMinimo*Ciudades[rf].tropa.nivelEdiAlInDeRecArq);									
 									break;
-							case 12: if(Ciudades[rf].nivelEdiAlInDeRecArq==2){
-										tropasArq2+=Ciudades[rf].tropasMinimo;
+							case 12: if(Ciudades[rf].tropa.nivelEdiAlInDeRecArq==2){
+										tropasArq2+=Ciudades[rf].tropa.tropasMinimo;
 									}else{
-										tropasArq2+=(Ciudades[rf].tropasMinimo*2);
+										tropasArq2+=(Ciudades[rf].tropa.tropasMinimo*2);
 									}							
 									break;								
-							case 13: tropasArq3+=Ciudades[rf].tropasMinimo;							
+							case 13: tropasArq3+=Ciudades[rf].tropa.tropasMinimo;							
 									break;
 							
-							case 14: tropasCab1+=(Ciudades[rf].tropasMinimo*Ciudades[rf].nivelEdiAlInDeRecCab);	
+							case 14: tropasCab1+=(Ciudades[rf].tropa.tropasMinimo*Ciudades[rf].tropa.nivelEdiAlInDeRecCab);	
 									break;
 									
-							case 15: if(Ciudades[rf].nivelEdiAlInDeRecCab==2){
-										tropasCab2+=Ciudades[rf].tropasMinimo;
+							case 15: if(Ciudades[rf].tropa.nivelEdiAlInDeRecCab==2){
+										tropasCab2+=Ciudades[rf].tropa.tropasMinimo;
 									}else{
-										tropasCab2+=(Ciudades[rf].tropasMinimo*2);
+										tropasCab2+=(Ciudades[rf].tropa.tropasMinimo*2);
 									}							
 									break;
 									
-							case 16: tropasCab3+=Ciudades[rf].tropasMinimo;								
+							case 16: tropasCab3+=Ciudades[rf].tropa.tropasMinimo;								
 									break;
 							
 							
@@ -1276,15 +1283,15 @@ function reclutarFinal(){
 							default: break;
 						}
 						numTropas=tropasInf1+tropasArq1+tropasCab1+tropasInf2+tropasInf3+tropasArq2+tropasCab2+tropasArq3+tropasCab3;
-						Ciudades[rf].tiempoTerminarT=0;
-						Ciudades[rf].hayColaTropa=false;
+						Ciudades[rf].tropa.tiempoTerminarT=0;
+						Ciudades[rf].tropa.hayColaTropa=false;
 						//$("#Cancelar").hide();
 						
 						
 					}
 				}else{
 					var today61=new Date();//tiempo del juego
-					Ciudades[rf].tiempoTerminarT=Ciudades[rf].tiempoPausadoRec+today61.getTime();
+					Ciudades[rf].tropa.tiempoTerminarT=Ciudades[rf].tropa.tiempoPausadoRec+today61.getTime();
 				}
 				
 			}
@@ -1318,7 +1325,7 @@ function dibujarEspada(X,Y){
 	//console.log(temporal3);
 
 	
-	if((X-camara.posX>=Px1[1]&&X-camara.posX<=Px1[1]+Px2[1]&&Y-camara.posY+mapay_inicial>=Py1[1]&&Y-camara.posY+mapay_inicial<=Py1[1]+Py2[1]&&temporal3==1)){
+	if((X-camara.posX>=Ciudades[1].posX&&X-camara.posX<=Ciudades[1].posX+40&&Y-camara.posY+mapay_inicial>=Ciudades[1].posY&&Y-camara.posY+mapay_inicial<=Ciudades[1].posY+40&&temporal3==1)){
 		//contextoJ1.drawImage(imgSword,Px1[1],Py1[1],512,512);
 		//console.log("holis");
 		espada=true;
@@ -1327,7 +1334,7 @@ function dibujarEspada(X,Y){
 	}else{
 		contador+=1;
 	}
-	if((X-camara.posX>=Px1[2]&&X-camara.posX<=Px1[2]+Px2[2]&&Y-camara.posY+mapay_inicial>=Py1[2]&&Y-camara.posY+mapay_inicial<=Py1[2]+Py2[2]&&temporal3==2)){
+	if((X-camara.posX>=Ciudades[2].posX&&X-camara.posX<=Ciudades[2].posX+40&&Y-camara.posY+mapay_inicial>=Ciudades[2].posY&&Y-camara.posY+mapay_inicial<=Ciudades[2].posY+40&&temporal3==2)){
 		//contextoJ1.drawImage(imgSword,Px1[1],Py1[1],512,512);
 		//console.log("holis");
 		espada=true;
@@ -1336,7 +1343,7 @@ function dibujarEspada(X,Y){
 	}else{
 		contador+=1;
 	}
-	if((X-camara.posX>=Px1[3]&&X-camara.posX<=Px1[3]+Px2[3]&&Y-camara.posY+mapay_inicial>=Py1[3]&&Y-camara.posY+mapay_inicial<=Py1[3]+Py2[3]&&temporal3==3)){
+	if((X-camara.posX>=Ciudades[3].posX&&X-camara.posX<=Ciudades[3].posX+40&&Y-camara.posY+mapay_inicial>=Ciudades[3].posY&&Y-camara.posY+mapay_inicial<=Ciudades[3].posY+40&&temporal3==3)){
 		//contextoJ1.drawImage(imgSword,Px1[1],Py1[1],512,512);
 		//console.log("holis");
 		espada=true;
@@ -1345,7 +1352,7 @@ function dibujarEspada(X,Y){
 	}else{
 		contador+=1;
 	}
-	if((X-camara.posX>=Px1[4]&&X-camara.posX<=Px1[4]+Px2[4]&&Y-camara.posY+mapay_inicial>=Py1[4]&&Y-camara.posY+mapay_inicial<=Py1[4]+Py2[4]&&temporal3==4)){
+	if((X-camara.posX>=Ciudades[4].posX&&X-camara.posX<=Ciudades[4].posX+40&&Y-camara.posY+mapay_inicial>=Ciudades[4].posY&&Y-camara.posY+mapay_inicial<=Ciudades[4].posY+40&&temporal3==4)){
 		//contextoJ1.drawImage(imgSword,Px1[1],Py1[1],512,512);
 		//console.log("holis");
 		espada=true;
@@ -1354,7 +1361,7 @@ function dibujarEspada(X,Y){
 	}else{
 		contador+=1;
 	}
-	if((X-camara.posX>=Px1[5]&&X-camara.posX<=Px1[5]+Px2[5]&&Y-camara.posY+mapay_inicial>=Py1[5]&&Y-camara.posY+mapay_inicial<=Py1[5]+Py2[5]&&temporal3==5)){
+	if((X-camara.posX>=Ciudades[5].posX&&X-camara.posX<=Ciudades[5].posX+40&&Y-camara.posY+mapay_inicial>=Ciudades[5].posY&&Y-camara.posY+mapay_inicial<=Ciudades[5].posY+40&&temporal3==5)){
 		//contextoJ1.drawImage(imgSword,Px1[1],Py1[1],512,512);
 		//console.log("holis");
 		espada=true;
@@ -1363,7 +1370,7 @@ function dibujarEspada(X,Y){
 	}else{
 		contador+=1;
 	}
-	if((X-camara.posX>=Px1[6]&&X-camara.posX<=Px1[6]+Px2[6]&&Y-camara.posY+mapay_inicial>=Py1[6]&&Y-camara.posY+mapay_inicial<=Py1[6]+Py2[6]&&temporal3==6)){
+	if((X-camara.posX>=Ciudades[6].posX&&X-camara.posX<=Ciudades[6].posX+40&&Y-camara.posY+mapay_inicial>=Ciudades[6].posY&&Y-camara.posY+mapay_inicial<=Ciudades[6].posY+40&&temporal3==6)){
 		//contextoJ1.drawImage(imgSword,Px1[1],Py1[1],512,512);
 		//console.log("holis");
 		espada=true;
@@ -1371,16 +1378,7 @@ function dibujarEspada(X,Y){
         espadaY=Y;
 	}else{
 		contador+=1;
-	}if((X-camara.posX>=Px1[7]&&X-camara.posX<=Px1[7]+Px2[7]&&Y-camara.posY+mapay_inicial>=Py1[7]&&Y-camara.posY+mapay_inicial<=Py1[7]+Py2[7]&&temporal3==7)){
-		//contextoJ1.drawImage(imgSword,Px1[1],Py1[1],512,512);
-		//console.log("holis");
-		espada=true;
-		espadaX=X;
-        espadaY=Y;
-	}else{
-		contador+=1;
-	}
-	if((X-camara.posX>=Px1[8]&&X-camara.posX<=Px1[8]+Px2[8]&&Y-camara.posY+mapay_inicial>=Py1[8]&&Y-camara.posY+mapay_inicial<=Py1[8]+Py2[8]&&temporal3==8)){
+	}if((X-camara.posX>=Ciudades[7].posX&&X-camara.posX<=Ciudades[7].posX+40&&Y-camara.posY+mapay_inicial>=Ciudades[7].posY&&Y-camara.posY+mapay_inicial<=Ciudades[7].posY+40&&temporal3==7)){
 		//contextoJ1.drawImage(imgSword,Px1[1],Py1[1],512,512);
 		//console.log("holis");
 		espada=true;
@@ -1389,7 +1387,16 @@ function dibujarEspada(X,Y){
 	}else{
 		contador+=1;
 	}
-	if((X-camara.posX>=Px1[9]&&X-camara.posX<=Px1[9]+Px2[9]&&Y-camara.posY+mapay_inicial>=Py1[9]&&Y-camara.posY+mapay_inicial<=Py1[9]+Py2[9]&&temporal3==9)){
+	if((X-camara.posX>=Ciudades[8].posX&&X-camara.posX<=Ciudades[8].posX+40&&Y-camara.posY+mapay_inicial>=Ciudades[8].posY&&Y-camara.posY+mapay_inicial<=Ciudades[8].posY+40&&temporal3==8)){
+		//contextoJ1.drawImage(imgSword,Px1[1],Py1[1],512,512);
+		//console.log("holis");
+		espada=true;
+		espadaX=X;
+        espadaY=Y;
+	}else{
+		contador+=1;
+	}
+	if((X-camara.posX>=Ciudades[9].posX&&X-camara.posX<=Ciudades[9].posX+40&&Y-camara.posY+mapay_inicial>=Ciudades[9].posY&&Y-camara.posY+mapay_inicial<=Ciudades[9].posY+40&&temporal3==9)){
 		//contextoJ1.drawImage(imgSword,Px1[1],Py1[1],512,512);
 		//console.log("holis");
 		espada=true;
@@ -1437,6 +1444,7 @@ function generarAtaque(id){
 	}
 	
 }
+
 
 function dibujarCampoBatalla(){
 	
@@ -1552,6 +1560,7 @@ function dibujarCampoBatalla(){
 	contextoBatalla.closePath();
 	
 }
+
 
 function alertaBatalla(){
 	
@@ -1889,61 +1898,61 @@ function crearTropasEnemigas(){
 	for (let e2=0;e2<9;e2++){
 		soldadosTotal+=ejercitoEnemigo[e2];
 	}
-	if(soldadosTotal!=Ciudades[temporalID].cantidadTropas){
+	if(soldadosTotal!=Ciudades[temporalID].tropa.cantidadTropas){
 		//console.log(ejercitoEnemigo[0]);
 		switch (temporalID) {
 			
-			case 1:ejercitoEnemigo[0]=Ciudades[temporalID].cantidadTropas*0.4;
-				   ejercitoEnemigo[3]=Ciudades[temporalID].cantidadTropas*0.4;
-				   ejercitoEnemigo[6]=Ciudades[temporalID].cantidadTropas*0.2;			
+			case 1:ejercitoEnemigo[0]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
+				   ejercitoEnemigo[3]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
+				   ejercitoEnemigo[6]=Ciudades[temporalID].tropa.cantidadTropas*0.2;			
 			       break;
 				   
-			case 2:ejercitoEnemigo[0]=Ciudades[temporalID].cantidadTropas*0.4;
-				   ejercitoEnemigo[3]=Ciudades[temporalID].cantidadTropas*0.4;
-				   ejercitoEnemigo[6]=Ciudades[temporalID].cantidadTropas*0.2;
+			case 2:ejercitoEnemigo[0]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
+				   ejercitoEnemigo[3]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
+				   ejercitoEnemigo[6]=Ciudades[temporalID].tropa.cantidadTropas*0.2;
 				   break;
 				   
-			case 3:ejercitoEnemigo[0]=Ciudades[temporalID].cantidadTropas*0.4;
-				   ejercitoEnemigo[3]=Ciudades[temporalID].cantidadTropas*0.2;
-				   ejercitoEnemigo[6]=Ciudades[temporalID].cantidadTropas*0.4;
+			case 3:ejercitoEnemigo[0]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
+				   ejercitoEnemigo[3]=Ciudades[temporalID].tropa.cantidadTropas*0.2;
+				   ejercitoEnemigo[6]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
 				   break;
 			
-			case 4:ejercitoEnemigo[0]=Ciudades[temporalID].cantidadTropas*0.4;
-				   ejercitoEnemigo[3]=Ciudades[temporalID].cantidadTropas*0.4;
-				   ejercitoEnemigo[6]=Ciudades[temporalID].cantidadTropas*0.2;
+			case 4:ejercitoEnemigo[0]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
+				   ejercitoEnemigo[3]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
+				   ejercitoEnemigo[6]=Ciudades[temporalID].tropa.cantidadTropas*0.2;
 				   break;
 			
-			case 5:ejercitoEnemigo[0]=Ciudades[temporalID].cantidadTropas*0.4;
-				   ejercitoEnemigo[3]=Ciudades[temporalID].cantidadTropas*0.2;
-				   ejercitoEnemigo[6]=Ciudades[temporalID].cantidadTropas*0.4;
+			case 5:ejercitoEnemigo[0]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
+				   ejercitoEnemigo[3]=Ciudades[temporalID].tropa.cantidadTropas*0.2;
+				   ejercitoEnemigo[6]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
 				   break;
 			
 			
 			
 			
 			
-			case 6:ejercitoEnemigo[1]=Ciudades[temporalID].cantidadTropas*0.4;
-				   ejercitoEnemigo[4]=Ciudades[temporalID].cantidadTropas*0.4;
-				   ejercitoEnemigo[7]=Ciudades[temporalID].cantidadTropas*0.2;
+			case 6:ejercitoEnemigo[1]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
+				   ejercitoEnemigo[4]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
+				   ejercitoEnemigo[7]=Ciudades[temporalID].tropa.cantidadTropas*0.2;
 				   break;				   
 				   
-			case 7:ejercitoEnemigo[1]=Ciudades[temporalID].cantidadTropas*0.4;
-				   ejercitoEnemigo[4]=Ciudades[temporalID].cantidadTropas*0.2;
-				   ejercitoEnemigo[7]=Ciudades[temporalID].cantidadTropas*0.4;
+			case 7:ejercitoEnemigo[1]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
+				   ejercitoEnemigo[4]=Ciudades[temporalID].tropa.cantidadTropas*0.2;
+				   ejercitoEnemigo[7]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
 				   break;
 			
-			case 8:ejercitoEnemigo[1]=Ciudades[temporalID].cantidadTropas*0.2;
-				   ejercitoEnemigo[4]=Ciudades[temporalID].cantidadTropas*0.4;
-				   ejercitoEnemigo[7]=Ciudades[temporalID].cantidadTropas*0.4;
+			case 8:ejercitoEnemigo[1]=Ciudades[temporalID].tropa.cantidadTropas*0.2;
+				   ejercitoEnemigo[4]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
+				   ejercitoEnemigo[7]=Ciudades[temporalID].tropa.cantidadTropas*0.4;
 				   break;
 			
 			
 			
 			
 			
-			case 9:ejercitoEnemigo[2]=Ciudades[temporalID].cantidadTropas*0.2;
-				   ejercitoEnemigo[5]=Ciudades[temporalID].cantidadTropas*0.2;
-				   ejercitoEnemigo[8]=Ciudades[temporalID].cantidadTropas*0.6;
+			case 9:ejercitoEnemigo[2]=Ciudades[temporalID].tropa.cantidadTropas*0.2;
+				   ejercitoEnemigo[5]=Ciudades[temporalID].tropa.cantidadTropas*0.2;
+				   ejercitoEnemigo[8]=Ciudades[temporalID].tropa.cantidadTropas*0.6;
 				   break;
 			
 			default: break;
@@ -2005,7 +2014,7 @@ function generarCuadroPreBatalla(){
 			contextoBatalla.fillText(""+Ciudades[0].nombre,700,380);
 			contextoBatalla.fillText(""+Ciudades[1].nombre,250,380);
 			contextoBatalla.font="15pt Verdana";
-			contextoBatalla.fillText("Tropas:"+Ciudades[1].cantidadTropas,250,420);
+			contextoBatalla.fillText("Tropas:"+Ciudades[1].tropa.cantidadTropas,250,420);
 			contextoBatalla.fillText("Tropas:"+numTropas,700,420);
 			
 			contextoBatalla.fillText("Probabilidad",450,315);
@@ -2026,7 +2035,7 @@ function generarCuadroPreBatalla(){
 			contextoBatalla.fillText(""+Ciudades[1].nombre,700,380);
 			contextoBatalla.fillText(""+Ciudades[2].nombre,250,380);
 			contextoBatalla.font="15pt Verdana";
-			contextoBatalla.fillText("Tropas:"+Ciudades[2].cantidadTropas,250,420);
+			contextoBatalla.fillText("Tropas:"+Ciudades[2].tropa.cantidadTropas,250,420);
 			contextoBatalla.fillText("Tropas:"+numTropas,700,420);
 			
 			contextoBatalla.fillText("Probabilidad",450,315);
@@ -2044,7 +2053,7 @@ function generarCuadroPreBatalla(){
 			contextoBatalla.fillText(""+Ciudades[2].nombre,700,380);
 			contextoBatalla.fillText(""+Ciudades[3].nombre,250,380);
 			contextoBatalla.font="15pt Verdana";
-			contextoBatalla.fillText("Tropas:"+Ciudades[3].cantidadTropas,250,420);
+			contextoBatalla.fillText("Tropas:"+Ciudades[3].tropa.cantidadTropas,250,420);
 			contextoBatalla.fillText("Tropas:"+numTropas,700,420);
 			
 			contextoBatalla.fillText("Probabilidad",450,315);
@@ -2061,7 +2070,7 @@ function generarCuadroPreBatalla(){
 			contextoBatalla.fillText(""+Ciudades[3].nombre,700,380);
 			contextoBatalla.fillText(""+Ciudades[4].nombre,250,380);
 			contextoBatalla.font="15pt Verdana";
-			contextoBatalla.fillText("Tropas:"+Ciudades[4].cantidadTropas,250,420);
+			contextoBatalla.fillText("Tropas:"+Ciudades[4].tropa.cantidadTropas,250,420);
 			contextoBatalla.fillText("Tropas:"+numTropas,700,420);
 			
 			contextoBatalla.fillText("Probabilidad",450,315);
@@ -2078,7 +2087,7 @@ function generarCuadroPreBatalla(){
 			contextoBatalla.fillText(""+Ciudades[4].nombre,700,380);
 			contextoBatalla.fillText(""+Ciudades[5].nombre,250,380);
 			contextoBatalla.font="15pt Verdana";
-			contextoBatalla.fillText("Tropas:"+Ciudades[5].cantidadTropas,250,420);
+			contextoBatalla.fillText("Tropas:"+Ciudades[5].tropa.cantidadTropas,250,420);
 			contextoBatalla.fillText("Tropas:"+numTropas,700,420);
 			
 			contextoBatalla.fillText("Probabilidad",450,315);
@@ -2095,7 +2104,7 @@ function generarCuadroPreBatalla(){
 			contextoBatalla.fillText(""+Ciudades[5].nombre,700,380);
 			contextoBatalla.fillText(""+Ciudades[6].nombre,250,380);
 			contextoBatalla.font="15pt Verdana";
-			contextoBatalla.fillText("Tropas:"+Ciudades[6].cantidadTropas,250,420);
+			contextoBatalla.fillText("Tropas:"+Ciudades[6].tropa.cantidadTropas,250,420);
 			contextoBatalla.fillText("Tropas:"+numTropas,700,420);
 			
 			contextoBatalla.fillText("Probabilidad",450,315);
@@ -2112,7 +2121,7 @@ function generarCuadroPreBatalla(){
 			contextoBatalla.fillText(""+Ciudades[6].nombre,700,380);
 			contextoBatalla.fillText(""+Ciudades[7].nombre,250,380);
 			contextoBatalla.font="15pt Verdana";
-			contextoBatalla.fillText("Tropas:"+Ciudades[7].cantidadTropas,250,420);
+			contextoBatalla.fillText("Tropas:"+Ciudades[7].tropa.cantidadTropas,250,420);
 			contextoBatalla.fillText("Tropas:"+numTropas,700,420);
 			
 			contextoBatalla.fillText("Probabilidad",450,315);
@@ -2129,7 +2138,7 @@ function generarCuadroPreBatalla(){
 			contextoBatalla.fillText(""+Ciudades[7].nombre,700,380);
 			contextoBatalla.fillText(""+Ciudades[8].nombre,250,380);
 			contextoBatalla.font="15pt Verdana";
-			contextoBatalla.fillText("Tropas:"+Ciudades[8].cantidadTropas,250,420);
+			contextoBatalla.fillText("Tropas:"+Ciudades[8].tropa.cantidadTropas,250,420);
 			contextoBatalla.fillText("Tropas:"+numTropas,700,420);
 			
 			contextoBatalla.fillText("Probabilidad",450,315);
@@ -2146,7 +2155,7 @@ function generarCuadroPreBatalla(){
 			contextoBatalla.fillText(""+Ciudades[8].nombre,700,380);
 			contextoBatalla.fillText(""+Ciudades[9].nombre,250,380);
 			contextoBatalla.font="15pt Verdana";
-			contextoBatalla.fillText("Tropas:"+Ciudades[9].cantidadTropas,250,420);
+			contextoBatalla.fillText("Tropas:"+Ciudades[9].tropa.cantidadTropas,250,420);
 			contextoBatalla.fillText("Tropas:"+numTropas,700,420);
 			
 			contextoBatalla.fillText("Probabilidad",450,315);
@@ -4924,9 +4933,9 @@ function alertaGeneraAtaque(){
 	
 		tiempoPausado=tiempoRestante-time;
 		for (let ti=0;ti<10;ti++){
-			Ciudades[ti].tiempoPausadoPro=Ciudades[ti].tiempoTerminarPro-time;
-			Ciudades[ti].tiempoPausadoCons=Ciudades[ti].tiempoTerminarC-time;
-			Ciudades[ti].tiempoPausadoRec=Ciudades[ti].tiempoTerminarT-time;
+			Ciudades[ti].tiempoPausadoPro=Ciudades[ti].produccion.tiempoTerminarPro-time;
+			Ciudades[ti].tiempoPausadoCons=Ciudades[ti].edificio.tiempoTerminarC-time;
+			Ciudades[ti].tiempoPausadoRec=Ciudades[ti].tropa.tiempoTerminarT-time;
 			
 		}
 		

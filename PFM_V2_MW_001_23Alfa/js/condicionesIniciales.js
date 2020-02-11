@@ -70,12 +70,14 @@ mapa.onload=function () {
 }
 
 //variables para ciudades en el mapa
+/*
 var Px1= new Array();
 var Py1= new Array();
 var Py2= new Array();
 var Px2= new Array();
 
 UbicaionCiudades();
+*/
 
 // variables zonas visibles
 

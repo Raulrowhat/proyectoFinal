@@ -64,10 +64,10 @@ $("#Jugar").click(function(){
 		//console.log((Px1[t]+camara.posX) + "  " + (Py1[t]+camara.posY-mapay_inicial)+ "  " +" holis " );
 		if(mostarInventarioTropas==false){
 			for(let t = 0; t<10; t++){
-				if(e.pageX>=Px1[t]+camara.posX&&
-				e.pageX<=Px1[t]+camara.posX+Px2[t]&&
-				e.pageY>=Py1[t]+camara.posY-mapay_inicial&&
-				e.pageY<=Py1[t]+camara.posY+Py2[t]-mapay_inicial){
+				if(e.pageX>=Ciudades[t].posX+camara.posX&&
+				e.pageX<=Ciudades[t].posX+camara.posX+40&&
+				e.pageY>=Ciudades[t].posY+camara.posY-mapay_inicial&&
+				e.pageY<=Ciudades[t].posY+camara.posY+40-mapay_inicial){
 					//console.log(e.pageX + "  " + e.pageY+ "  " +" holis " );
 					//console.log("  si holis " );
 					if(Ciudades[t].pertenencia==1){
@@ -336,31 +336,31 @@ $("#Jugar").click(function(){
 			contadorClick[co]=0;
 		}// para saber numero de click
 		$("#Construir").hide();
-		materiasUsarConstruccionYTropas(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioAConstruir);
+		materiasUsarConstruccionYTropas(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioAConstruir);
 		if(okConstruccionOrTropa==true){
 			$("#Cancelar").fadeIn(1000);
 			
-			switch (Ciudades[enLienzoCiudadID-1].edificioAConstruir) {
+			switch (Ciudades[enLienzoCiudadID-1].edificio.edificioAConstruir) {
 				case 1:	
-				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioDinero);
+				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioDinero);
 				break;
 				case 2:	
-				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioRecursoMad);
+				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioRecursoMad);
 				break;
 				case 3:	
-				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioRecursoLad);
+				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioRecursoLad);
 				break;
 				case 4:	
-				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioRecursoMet);
+				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioRecursoMet);
 				break;
 				case 5:	
-				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioTropaInf);
+				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaInf);
 				break;
 				case 6:	
-				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioTropaArq);
+				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaArq);
 				break;
 				case 7:	
-				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioTropaCab);
+				startTimeConstruir(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaCab);
 				break;
 				
 				
@@ -373,7 +373,7 @@ $("#Jugar").click(function(){
 			
 			
 			//Ciudades[enLienzoCiudadID-1].edificioAConstruir=1;
-			Ciudades[enLienzoCiudadID-1].hayColaConst=true;
+			Ciudades[enLienzoCiudadID-1].edificio.hayColaConst=true;
 			//haga dibujo
 			okConstruccionOrTropa=false;
 		
@@ -395,54 +395,54 @@ $("#Jugar").click(function(){
 			contadorClick[co]=0;
 		}// para saber numero de click
 		$("#ReclutarTropas").hide();
-		materiasUsarConstruccionYTropas(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].tropaAAlistar);
+		materiasUsarConstruccionYTropas(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].tropa.tropaAAlistar);
 		if(okConstruccionOrTropa==true){
 			$("#Cancelar").fadeIn(1000);
 			
-			switch (Ciudades[enLienzoCiudadID-1].tropaAAlistar) {
+			switch (Ciudades[enLienzoCiudadID-1].tropa.tropaAAlistar) {
 				case 8:	
-				Ciudades[enLienzoCiudadID-1].nivelEdiAlInDeRecInf=Ciudades[enLienzoCiudadID-1].edificioTropaInf;
+				Ciudades[enLienzoCiudadID-1].tropa.nivelEdiAlInDeRecInf=Ciudades[enLienzoCiudadID-1].edificio.edificioTropaInf;
 				//console.log("holis"+Ciudades[enLienzoCiudadID-1].nivelEdiAlInDeRecInf);
-				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioTropaInf,Ciudades[enLienzoCiudadID-1].tropaAAlistar);
+				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaInf,Ciudades[enLienzoCiudadID-1].tropa.tropaAAlistar);
 				
 				break;
 				case 9:	
-				Ciudades[enLienzoCiudadID-1].nivelEdiAlInDeRecInf=Ciudades[enLienzoCiudadID-1].edificioTropaInf;
-				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioTropaInf,Ciudades[enLienzoCiudadID-1].tropaAAlistar);
+				Ciudades[enLienzoCiudadID-1].tropa.nivelEdiAlInDeRecInf=Ciudades[enLienzoCiudadID-1].edificio.edificioTropaInf;
+				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaInf,Ciudades[enLienzoCiudadID-1].tropa.tropaAAlistar);
 				break;
 				case 10:	
-				Ciudades[enLienzoCiudadID-1].nivelEdiAlInDeRecInf=Ciudades[enLienzoCiudadID-1].edificioTropaInf;
-				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioTropaInf,Ciudades[enLienzoCiudadID-1].tropaAAlistar);
+				Ciudades[enLienzoCiudadID-1].tropa.nivelEdiAlInDeRecInf=Ciudades[enLienzoCiudadID-1].edificio.edificioTropaInf;
+				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaInf,Ciudades[enLienzoCiudadID-1].tropa.tropaAAlistar);
 				break;
 				case 11:
-				Ciudades[enLienzoCiudadID-1].nivelEdiAlInDeRecArq=Ciudades[enLienzoCiudadID-1].edificioTropaArq;				
-				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioTropaArq,Ciudades[enLienzoCiudadID-1].tropaAAlistar);
+				Ciudades[enLienzoCiudadID-1].tropa.nivelEdiAlInDeRecArq=Ciudades[enLienzoCiudadID-1].edificio.edificioTropaArq;				
+				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaArq,Ciudades[enLienzoCiudadID-1].tropa.tropaAAlistar);
 				break;
 				case 12:
-				Ciudades[enLienzoCiudadID-1].nivelEdiAlInDeRecArq=Ciudades[enLienzoCiudadID-1].edificioTropaArq;				
-				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioTropaArq,Ciudades[enLienzoCiudadID-1].tropaAAlistar);
+				Ciudades[enLienzoCiudadID-1].tropa.nivelEdiAlInDeRecArq=Ciudades[enLienzoCiudadID-1].edificio.edificioTropaArq;				
+				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaArq,Ciudades[enLienzoCiudadID-1].tropa.tropaAAlistar);
 				break;
 				case 13:
-				Ciudades[enLienzoCiudadID-1].nivelEdiAlInDeRecArq=Ciudades[enLienzoCiudadID-1].edificioTropaArq;
-				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioTropaArq,Ciudades[enLienzoCiudadID-1].tropaAAlistar);
+				Ciudades[enLienzoCiudadID-1].tropa.nivelEdiAlInDeRecArq=Ciudades[enLienzoCiudadID-1].edificio.edificioTropaArq;
+				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaArq,Ciudades[enLienzoCiudadID-1].tropa.tropaAAlistar);
 				break;
 				case 14:	
-				Ciudades[enLienzoCiudadID-1].nivelEdiAlInDeRecCab=Ciudades[enLienzoCiudadID-1].edificioTropaCab;
-				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioTropaCab,Ciudades[enLienzoCiudadID-1].tropaAAlistar);
+				Ciudades[enLienzoCiudadID-1].tropa.nivelEdiAlInDeRecCab=Ciudades[enLienzoCiudadID-1].edificio.edificioTropaCab;
+				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaCab,Ciudades[enLienzoCiudadID-1].tropa.tropaAAlistar);
 				break;
 				case 15:	
-				Ciudades[enLienzoCiudadID-1].nivelEdiAlInDeRecCab=Ciudades[enLienzoCiudadID-1].edificioTropaCab;
-				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioTropaCab,Ciudades[enLienzoCiudadID-1].tropaAAlistar);
+				Ciudades[enLienzoCiudadID-1].tropa.nivelEdiAlInDeRecCab=Ciudades[enLienzoCiudadID-1].edificio.edificioTropaCab;
+				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaCab,Ciudades[enLienzoCiudadID-1].tropa.tropaAAlistar);
 				break;
 				case 16:	
-				Ciudades[enLienzoCiudadID-1].nivelEdiAlInDeRecCab=Ciudades[enLienzoCiudadID-1].edificioTropaCab;
-				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioTropaCab,Ciudades[enLienzoCiudadID-1].tropaAAlistar);
+				Ciudades[enLienzoCiudadID-1].tropa.nivelEdiAlInDeRecCab=Ciudades[enLienzoCiudadID-1].edificio.edificioTropaCab;
+				startTimeTropa(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioTropaCab,Ciudades[enLienzoCiudadID-1].tropa.tropaAAlistar);
 				break;
 				default: break;
 			}
 			
 			//Ciudades[enLienzoCiudadID-1].edificioAConstruir=1;
-			Ciudades[enLienzoCiudadID-1].hayColaTropa=true;
+			Ciudades[enLienzoCiudadID-1].tropa.hayColaTropa=true;
 			//haga dibujo
 		
 		
@@ -455,18 +455,18 @@ $("#Jugar").click(function(){
 	$("#Cancelar").click(function(){
 		$("#Cancelar").hide();
 		if(opcionPapiro==2){
-			Ciudades[enLienzoCiudadID-1].hayColaConst=false;
+			Ciudades[enLienzoCiudadID-1].edificio.hayColaConst=false;
 			//quitar tiempo a 0
 			//devolver materiales
-			Ciudades[enLienzoCiudadID-1].tiempoTerminarC=0;
-			devolverRecursos(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificioAConstruir);
+			Ciudades[enLienzoCiudadID-1].edificio.tiempoTerminarC=0;
+			devolverRecursos(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].edificio.edificioAConstruir);
 		}
 		if(opcionPapiro==3){
-			Ciudades[enLienzoCiudadID-1].hayColaTropa=false;
+			Ciudades[enLienzoCiudadID-1].tropa.hayColaTropa=false;
 			//quitar tiempo a 0
 			//devolver materiales
-			Ciudades[enLienzoCiudadID-1].tiempoTerminarT=0;
-			devolverRecursos(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].tropaAAlistar);
+			Ciudades[enLienzoCiudadID-1].tropa.tiempoTerminarT=0;
+			devolverRecursos(enLienzoCiudadID,Ciudades[enLienzoCiudadID-1].tropa.tropaAAlistar);
 		}
 		for(let co=0;co<16;co++){
 			contadorClick[co]=0;
@@ -501,9 +501,9 @@ $("#Jugar").click(function(){
 	
 		tiempoPausado=tiempoRestante-time;
 		for (let ti=0;ti<10;ti++){
-			Ciudades[ti].tiempoPausadoPro=Ciudades[ti].tiempoTerminarPro-time;
-			Ciudades[ti].tiempoPausadoCons=Ciudades[ti].tiempoTerminarC-time;
-			Ciudades[ti].tiempoPausadoRec=Ciudades[ti].tiempoTerminarT-time;
+			Ciudades[ti].tiempoPausadoPro=Ciudades[ti].produccion.tiempoTerminarPro-time;
+			Ciudades[ti].tiempoPausadoCons=Ciudades[ti].edificio.tiempoTerminarC-time;
+			Ciudades[ti].tiempoPausadoRec=Ciudades[ti].tropa.tiempoTerminarT-time;
 			
 		}
 		
@@ -541,9 +541,9 @@ $("#Jugar").click(function(){
 		reclutarEnemigo=false;
 		$("#IniciarBatalla").hide();
 		for (let ti=0;ti<10;ti++){
-			Ciudades[ti].tiempoPausadoPro=0;
-			Ciudades[ti].tiempoPausadoCons=0;
-			Ciudades[ti].tiempoPausadoRec=0;
+			Ciudades[ti].produccion.tiempoPausadoPro=0;
+			Ciudades[ti].edificio.tiempoPausadoCons=0;
+			Ciudades[ti].tropa.tiempoPausadoRec=0;
 			
 		}
 		//puedoAtacar=false;
@@ -587,9 +587,9 @@ $("#Jugar").click(function(){
 		iniciarTiempo=true;
 		tiempoPausado=0;
 		for (let ti=0;ti<10;ti++){
-			Ciudades[ti].tiempoPausadoPro=0;
-			Ciudades[ti].tiempoPausadoCons=0;
-			Ciudades[ti].tiempoPausadoRec=0;
+			Ciudades[ti].produccion.tiempoPausadoPro=0;
+			Ciudades[ti].edificio.tiempoPausadoCons=0;
+			Ciudades[ti].tropa.tiempoPausadoRec=0;
 			
 		}
 		//perderAbandonarBatalla();
@@ -685,9 +685,9 @@ $("#Jugar").click(function(){
 		iniciarTiempo=true;
 		tiempoPausado=0;
 		for (let ti=0;ti<10;ti++){
-			Ciudades[ti].tiempoPausadoPro=0;
-			Ciudades[ti].tiempoPausadoCons=0;
-			Ciudades[ti].tiempoPausadoRec=0;
+			Ciudades[ti].produccion.tiempoPausadoPro=0;
+			Ciudades[ti].edificio.tiempoPausadoCons=0;
+			Ciudades[ti].tropa.tiempoPausadoRec=0;
 			
 		}
 		//perderAbandonarBatalla();

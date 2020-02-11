@@ -192,7 +192,7 @@ function eventoTeclasJugador2(){
 
 
 function dibujaCiudad(){
-	for(let z=0;z<Px1.length;z++){
+	for(let z=0;z<Ciudades.length;z++){
 		
 		contextoJ1.beginPath();
 		if(z==0){
@@ -209,7 +209,7 @@ function dibujaCiudad(){
 				contextoJ1.fillStyle = "red";
 			}
 		}
-		contextoJ1.fillRect(Px1[z]+camara.posX, Py1[z]+camara.posY-mapay_inicial, Px2[z],Py2[z]);// para contorno 
+		contextoJ1.fillRect(Ciudades[z].posX+camara.posX, Ciudades[z].posY+camara.posY-mapay_inicial, Ciudades[z].tamano,Ciudades[z].tamano);// para contorno 
 		//contextoJ1.strokeRect(Px1[z]+camara.posX, Py1[z]+camara.posY-mapay_inicial, Px2[z],Py2[z]);// para contorno 
 		contextoJ1.fill();
 		//contextoJ1.clearRect(Px1[z]+camara.posX+10, Py1[z]+camara.posY-mapay_inicial+10, Px2[z]-20,Py2[z]-20);
@@ -217,18 +217,18 @@ function dibujaCiudad(){
 		//contextoJ1.fillRect(Px1[z]+camara.posX+10, Py1[z]+camara.posY-mapay_inicial+10, Px2[z]-20,Py2[z]-20);
 		if(Ciudades[z].pertenencia==1){
 			contextoJ1.fillStyle = "blue";
-			contextoJ1.fillRect(Px1[z]+camara.posX, Py1[z]+camara.posY-mapay_inicial, Px2[z],Py2[z]);// para contorno 
+			contextoJ1.fillRect(Ciudades[z].posX+camara.posX, Ciudades[z].posY+camara.posY-mapay_inicial, Ciudades[z].tamano,Ciudades[z].tamano);// para contorno 
 			contextoJ1.fill();
-			contextoJ1.drawImage(imgCiudad,Px1[z]+camara.posX, Py1[z]+camara.posY-mapay_inicial, Px2[z],Py2[z]);//dibuja ciudad en el mapa
+			contextoJ1.drawImage(imgCiudad,Ciudades[z].posX+camara.posX, Ciudades[z].posY+camara.posY-mapay_inicial, Ciudades[z].tamano,Ciudades[z].tamano);//dibuja ciudad en el mapa
 		}else{
 			if(z<=5){
-				contextoJ1.drawImage(imgCiudad2,Px1[z]+camara.posX+2, Py1[z]+camara.posY-mapay_inicial+2, Px2[z]-5,Py2[z]-5);//dibuja ciudad en el mapa
+				contextoJ1.drawImage(imgCiudad2,Ciudades[z].posX+camara.posX+2, Ciudades[z].posY+camara.posY-mapay_inicial+2, Ciudades[z].tamano-5,Ciudades[z].tamano-5);//dibuja ciudad en el mapa
 			}else{
 				if(z>5&&z<9){
-					contextoJ1.drawImage(imgCiudad3,Px1[z]+camara.posX, Py1[z]+camara.posY-mapay_inicial, Px2[z],Py2[z]);//dibuja ciudad en el mapa
+					contextoJ1.drawImage(imgCiudad3,Ciudades[z].posX+camara.posX, Ciudades[z].posY+camara.posY-mapay_inicial, Ciudades[z].tamano,Ciudades[z].tamano);//dibuja ciudad en el mapa
 				}else{
 					
-					contextoJ1.drawImage(imgCiudad4,Px1[z]+camara.posX, Py1[z]+camara.posY-mapay_inicial, Px2[z],Py2[z]);//dibuja ciudad en el mapa
+					contextoJ1.drawImage(imgCiudad4,Ciudades[z].posX+camara.posX, Ciudades[z].posY+camara.posY-mapay_inicial, Ciudades[z].tamano,Ciudades[z].tamano);//dibuja ciudad en el mapa
 				}
 			}
 		}
@@ -242,7 +242,7 @@ function dibujaCiudad(){
 	
 }
 
-
+/*
 function UbicaionCiudades(){
 	//ubicacion ciudades
 	var tamTempCiudad=40; //tamaño ciudades
@@ -259,6 +259,7 @@ function UbicaionCiudades(){
 	
 
 }
+*/
 
 function VolverGrisMapaDesconocido(){
 	
@@ -373,7 +374,7 @@ function NombreCiudadEnMapa(nC){
 		contextoJ1.beginPath();
 		contextoJ1.font="15pt Verdana";
 		contextoJ1.fillStyle = "black";
-		contextoJ1.fillText(""+Ciudades[n].nombre,Px1[n]+camara.posX-5, Py1[n]+camara.posY-mapay_inicial+60);
+		contextoJ1.fillText(""+Ciudades[n].nombre,Ciudades[n].posX+camara.posX-5, Ciudades[n].posY+camara.posY-mapay_inicial+60);
 		contextoJ1.fill();
 		contextoJ1.closePath();
 		
@@ -465,155 +466,155 @@ function dibujaInfoEnPapiroCiudad(id,info){
 		contextoCiudad.fillStyle = "black";
 		
 		switch (id) {
-			case 1:	contextoCiudad.fillText(""+Ciudades[id-1].edificioDinero,630,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMad,630,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoLad,630,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMet,630,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaInf,630,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaArq,630,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaCab,630,610);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodDinero,800,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMad,800,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoLad,800,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMet,800,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaInf,800,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaArq,800,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaCab,800,610);break;
+			case 1:	contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioDinero,630,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMad,630,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoLad,630,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMet,630,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaInf,630,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaArq,630,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaCab,630,610);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodDinero,800,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMad,800,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoLad,800,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMet,800,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaInf,800,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaArq,800,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaCab,800,610);break;
 					
-			case 2:	contextoCiudad.fillText(""+Ciudades[id-1].edificioDinero,630,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMad,630,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoLad,630,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMet,630,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaInf,630,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaArq,630,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaCab,630,610);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodDinero,800,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMad,800,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoLad,800,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMet,800,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaInf,800,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaArq,800,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaCab,800,610);break;
+			case 2:	contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioDinero,630,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMad,630,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoLad,630,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMet,630,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaInf,630,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaArq,630,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaCab,630,610);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodDinero,800,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMad,800,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoLad,800,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMet,800,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaInf,800,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaArq,800,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaCab,800,610);break;
 					
-			case 3:	contextoCiudad.fillText(""+Ciudades[id-1].edificioDinero,630,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMad,630,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoLad,630,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMet,630,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaInf,630,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaArq,630,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaCab,630,610);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodDinero,800,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMad,800,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoLad,800,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMet,800,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaInf,800,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaArq,800,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaCab,800,610);break;
+			case 3:	contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioDinero,630,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMad,630,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoLad,630,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMet,630,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaInf,630,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaArq,630,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaCab,630,610);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodDinero,800,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMad,800,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoLad,800,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMet,800,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaInf,800,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaArq,800,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaCab,800,610);break;
 					
-			case 4:	contextoCiudad.fillText(""+Ciudades[id-1].edificioDinero,630,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMad,630,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoLad,630,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMet,630,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaInf,630,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaArq,630,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaCab,630,610);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodDinero,800,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMad,800,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoLad,800,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMet,800,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaInf,800,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaArq,800,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaCab,800,610);break;
+			case 4:	contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioDinero,630,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMad,630,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoLad,630,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMet,630,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaInf,630,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaArq,630,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaCab,630,610);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodDinero,800,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMad,800,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoLad,800,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMet,800,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaInf,800,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaArq,800,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaCab,800,610);break;
 					
-			case 5:	contextoCiudad.fillText(""+Ciudades[id-1].edificioDinero,630,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMad,630,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoLad,630,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMet,630,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaInf,630,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaArq,630,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaCab,630,610);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodDinero,800,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMad,800,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoLad,800,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMet,800,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaInf,800,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaArq,800,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaCab,800,610);break;
+			case 5:	contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioDinero,630,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMad,630,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoLad,630,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMet,630,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaInf,630,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaArq,630,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaCab,630,610);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodDinero,800,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMad,800,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoLad,800,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMet,800,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaInf,800,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaArq,800,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaCab,800,610);break;
 					
-			case 6:	contextoCiudad.fillText(""+Ciudades[id-1].edificioDinero,630,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMad,630,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoLad,630,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMet,630,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaInf,630,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaArq,630,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaCab,630,610);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodDinero,800,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMad,800,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoLad,800,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMet,800,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaInf,800,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaArq,800,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaCab,800,610);break;
+			case 6:	contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioDinero,630,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMad,630,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoLad,630,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMet,630,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaInf,630,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaArq,630,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaCab,630,610);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodDinero,800,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMad,800,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoLad,800,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMet,800,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaInf,800,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaArq,800,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaCab,800,610);break;
 					
-			case 7:	contextoCiudad.fillText(""+Ciudades[id-1].edificioDinero,630,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMad,630,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoLad,630,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMet,630,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaInf,630,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaArq,630,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaCab,630,610);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodDinero,800,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMad,800,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoLad,800,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMet,800,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaInf,800,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaArq,800,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaCab,800,610);break;
+			case 7:	contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioDinero,630,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMad,630,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoLad,630,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMet,630,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaInf,630,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaArq,630,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaCab,630,610);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodDinero,800,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMad,800,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoLad,800,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMet,800,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaInf,800,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaArq,800,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaCab,800,610);break;
 					
-			case 8:	contextoCiudad.fillText(""+Ciudades[id-1].edificioDinero,630,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMad,630,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoLad,630,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMet,630,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaInf,630,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaArq,630,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaCab,630,610);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodDinero,800,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMad,800,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoLad,800,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMet,800,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaInf,800,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaArq,800,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaCab,800,610);break;
+			case 8:	contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioDinero,630,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMad,630,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoLad,630,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMet,630,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaInf,630,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaArq,630,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaCab,630,610);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodDinero,800,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMad,800,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoLad,800,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMet,800,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaInf,800,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaArq,800,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaCab,800,610);break;
 					
-			case 9:	contextoCiudad.fillText(""+Ciudades[id-1].edificioDinero,630,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMad,630,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoLad,630,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMet,630,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaInf,630,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaArq,630,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaCab,630,610);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodDinero,800,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMad,800,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoLad,800,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMet,800,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaInf,800,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaArq,800,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaCab,800,610);break;
+			case 9:	contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioDinero,630,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMad,630,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoLad,630,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMet,630,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaInf,630,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaArq,630,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaCab,630,610);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodDinero,800,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMad,800,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoLad,800,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMet,800,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaInf,800,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaArq,800,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaCab,800,610);break;
 					
-			case 10: contextoCiudad.fillText(""+Ciudades[id-1].edificioDinero,630,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMad,630,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoLad,630,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMet,630,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaInf,630,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaArq,630,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaCab,630,610);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodDinero,800,190);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMad,800,260);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoLad,800,330);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodRecursoMet,800,400);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaInf,800,470);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaArq,800,540);
-					contextoCiudad.fillText(""+Ciudades[id-1].prodTropaCab,800,610);break;
+			case 10: contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioDinero,630,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMad,630,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoLad,630,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMet,630,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaInf,630,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaArq,630,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaCab,630,610);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodDinero,800,190);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMad,800,260);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoLad,800,330);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodRecursoMet,800,400);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaInf,800,470);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaArq,800,540);
+					contextoCiudad.fillText(""+Ciudades[id-1].produccion.prodTropaCab,800,610);break;
 			
 			default: break;
 		}
@@ -631,31 +632,31 @@ function dibujaInfoEnPapiroCiudad(id,info){
 		
 		
 		contextoCiudad.drawImage(imgEdifDin,410,155,64,64);//dibuja edificio en papiro en la ciudad
-		contextoCiudad.fillText(""+Ciudades[id-1].edificioDinero,490,200);
+		contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioDinero,490,200);
 		contextoCiudad.fillText("Mercado",390,245);
 		
 		contextoCiudad.drawImage(imgEdifMad,600,155,64,64);//dibuja edificio en papiro en la ciudad
-		contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMad,680,200);
+		contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMad,680,200);
 		contextoCiudad.fillText("Maderera",580,245);
 		
 		contextoCiudad.drawImage(imgEdifLad,790,155,64,64);//dibuja edificio en papiro en la ciudad
-		contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoLad,870,200);
+		contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoLad,870,200);
 		contextoCiudad.fillText("Ladrillera",770,245);
 		
 		contextoCiudad.drawImage(imgEdifMet,410,280,64,64);//dibuja edificio en papiro en la ciudad
-		contextoCiudad.fillText(""+Ciudades[id-1].edificioRecursoMet,490,325);
+		contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioRecursoMet,490,325);
 		contextoCiudad.fillText("Mina Metal",390,370);
 		
 		contextoCiudad.drawImage(imgEdifTInf,600,280,64,64);//dibuja edificio en papiro en la ciudad
-		contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaInf,680,325);
+		contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaInf,680,325);
 		contextoCiudad.fillText("Barracas",580,370);
 		
 		contextoCiudad.drawImage(imgEdifTArq,790,280,64,64);//dibuja edificio en papiro en la ciudad
-		contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaArq,870,325);
+		contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaArq,870,325);
 		contextoCiudad.fillText("Arqueria",770,370);
 		
 		contextoCiudad.drawImage(imgEdifTCab,600,405,64,64);//dibuja edificio en papiro en la ciudad
-		contextoCiudad.fillText(""+Ciudades[id-1].edificioTropaCab,680,450);
+		contextoCiudad.fillText(""+Ciudades[id-1].edificio.edificioTropaCab,680,450);
 		contextoCiudad.fillText("Establos",580,495);
 		
 		contextoCiudad.fillRect(410, 510, 450,10);// para separar
@@ -671,7 +672,7 @@ function dibujaInfoEnPapiroCiudad(id,info){
 		contextoCiudad.fillText("Reclutamiento",575,110);
 		contextoCiudad.fill();
 		
-		switch (Ciudades[id-1].edificioTropaInf) {
+		switch (Ciudades[id-1].edificio.edificioTropaInf) {
 			case 1:	contextoCiudad.drawImage(imgTInf1,410,155,64,64);//dibuja tropa en papiro en la ciudad
 					contextoCiudad.fillText(""+tropasInf1,490,200);
 					contextoCiudad.fillText("Lanceros",390,245);	
@@ -699,7 +700,7 @@ function dibujaInfoEnPapiroCiudad(id,info){
 			default: break;
 		}
 		
-		switch (Ciudades[id-1].edificioTropaArq) {
+		switch (Ciudades[id-1].edificio.edificioTropaArq) {
 			case 1:	contextoCiudad.drawImage(imgTArq1,410,280,64,64);//dibuja tropa en papiro en la ciudad
 					contextoCiudad.fillText(""+tropasArq1,490,325);
 					contextoCiudad.fillText("Jabalineros",390,370);	
@@ -727,7 +728,7 @@ function dibujaInfoEnPapiroCiudad(id,info){
 			default: break;
 		}
 		
-		switch (Ciudades[id-1].edificioTropaCab) {
+		switch (Ciudades[id-1].edificio.edificioTropaCab) {
 			case 1:	contextoCiudad.drawImage(imgTCab1,410,405,64,64);//dibuja tropa en papiro en la ciudad
 					contextoCiudad.fillText(""+tropasCab1,490,450);
 					contextoCiudad.fillText("Cab.Ligera",390,495);

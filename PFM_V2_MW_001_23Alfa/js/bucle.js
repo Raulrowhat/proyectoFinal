@@ -70,7 +70,7 @@ function bucle(){
 				}else{
 					mostrarExplicacionInfo(enLienzoCiudadID,opcionPapiro,infoExpX,infoExpY,1);
 				}	
-				if(Ciudades[enLienzoCiudadID-1].hayColaConst==true||Ciudades[enLienzoCiudadID-1].hayColaTropa==true){
+				if(Ciudades[enLienzoCiudadID-1].edificio.hayColaConst==true||Ciudades[enLienzoCiudadID-1].tropa.hayColaTropa==true){
 					dibujarColaConstruccionYTropas(enLienzoCiudadID,opcionPapiro);
 					//cancelarConstruccionOAlistamiento(enLienzoCiudadID,opcionPapiro,infoExpX,infoExpY);
 				}
