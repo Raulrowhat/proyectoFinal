@@ -41,6 +41,11 @@ $("#Jugar").click(function(){
 		$("#Ejercito").show();
 		$("#lienzo1").show();
 		$("#escenarioT").show();
+		
+		$("#Arriba").show();
+		$("#Derecha").show();
+		$("#Abajo").show();
+		$("#Izquierda").show();
         //$("#lienzo1").hide();
         console.log("Eligio a personaje 1");
         Iniciar_el_Juego=true;
@@ -77,6 +82,10 @@ $("#Jugar").click(function(){
 						enLienzoCiudadID=Ciudades[t].id;
 						$("#lienzo1").fadeOut(500);
 						$("#Ejercito").hide();
+						$("#Arriba").hide();
+						$("#Derecha").hide();
+						$("#Abajo").hide();
+						$("#Izquierda").hide();
 						$("#lienzoCiudad").fadeIn(1000);
 						$("#AtrasMapa").fadeIn(1000);
 						$("#Informacion").fadeIn(1000);
@@ -129,6 +138,10 @@ $("#Jugar").click(function(){
 		mostarInventarioTropas=true;
 		$("#Ejercito").hide();
 		$("#Atacar").hide();
+		$("#Arriba").hide();
+		$("#Derecha").hide();
+		$("#Abajo").hide();
+		$("#Izquierda").hide();
 		puedoAtacar=false;
 		$("#RegresarEaMapa").show();
 	})
@@ -138,8 +151,95 @@ $("#Jugar").click(function(){
 		
 		mostarInventarioTropas=false;
 		$("#Ejercito").show();
+		$("#Arriba").show();
+		$("#Derecha").show();
+		$("#Abajo").show();
+		$("#Izquierda").show();
 		$("#RegresarEaMapa").hide();
 	})
+	
+	
+	$("#Arriba").mouseenter(function(){
+		$("#Arriba").click(function(){
+		
+			if(enLienzoMapa==true){
+				camara.moverse = true;
+				camara.direccion = 'arriba';
+				//console.log(em);
+			}
+		})
+	})
+	
+	$("#Arriba").mouseleave(function(){
+		
+		if(enLienzoMapa==true){
+			camara.moverse = false;
+			this.direccion = "";
+		}
+	})
+	
+	
+	$("#Abajo").mouseenter(function(){
+		
+		$("#Abajo").click(function(){
+		
+			if(enLienzoMapa==true){
+				camara.moverse = true;
+				camara.direccion = 'abajo';
+				//console.log(em);
+			}
+		})
+	})
+	
+	$("#Abajo").mouseleave(function(){
+		
+		if(enLienzoMapa==true){
+			camara.moverse = false;
+			this.direccion = "";
+		}
+	})
+	
+	
+	$("#Derecha").mouseenter(function(){
+		$("#Derecha").click(function(){
+		
+			if(enLienzoMapa==true){
+				camara.moverse = true;
+				camara.direccion = 'derecha';
+				//console.log(em);
+			}
+		})
+	})
+	
+	$("#Derecha").mouseleave(function(){
+		
+		if(enLienzoMapa==true){
+			camara.moverse = false;
+			this.direccion = "";
+		}
+	})
+	
+	
+	$("#Izquierda").mouseenter(function(){
+		$("#Izquierda").click(function(){
+		
+			if(enLienzoMapa==true){
+				camara.moverse = true;
+				camara.direccion = 'izquierda';
+				//console.log(em);
+			}
+		})
+	})
+	
+	$("#Izquierda").mouseleave(function(){
+		
+		if(enLienzoMapa==true){
+			camara.moverse = false;
+			this.direccion = "";
+		}
+	})
+	
+	
 	
 	$("#AtrasMapa").click(function(){
 		$("#lienzoCiudad").fadeOut(500);
@@ -150,6 +250,10 @@ $("#Jugar").click(function(){
 		contextoCiudad.clearRect(0,0,3000,2000);
 		$("#lienzo1").fadeIn(1000);
 		$("#Ejercito").fadeIn(1000);
+		$("#Arriba").fadeIn(1000);
+		$("#Derecha").fadeIn(1000);
+		$("#Abajo").fadeIn(1000);
+		$("#Izquierda").fadeIn(1000);
 		enLienzoCiudad=false;
 		enLienzoMapa=true;
 		mostrarPapiro=false;
@@ -492,6 +596,10 @@ $("#Jugar").click(function(){
 		$("#lienzoCiudad").hide();
 		$("#escenarioT").hide();
 		$("#Ejercito").hide();
+		$("#Arriba").hide();
+		$("#Derecha").hide();
+		$("#Abajo").hide();
+		$("#Izquierda").hide();
 		activarBatalla=true;
 		$("#Atacar").hide();
 		puedoAtacar=false;
@@ -527,6 +635,10 @@ $("#Jugar").click(function(){
 		$("#lienzoAtaque").hide();
 		$("#lienzo1").show();
 		$("#Ejercito").show();
+		$("#Arriba").show();
+		$("#Derecha").show();
+		$("#Abajo").show();
+		$("#Izquierda").show();
 		//$("#lienzoCiudad").hide();
 		$("#escenarioT").show();
 		enLienzoMapa=true;
@@ -577,6 +689,10 @@ $("#Jugar").click(function(){
 		$("#lienzoAtaque").hide();
 		$("#lienzo1").show();
 		$("#Ejercito").show();
+		$("#Arriba").show();
+		$("#Derecha").show();
+		$("#Abajo").show();
+		$("#Izquierda").show();
 		//$("#lienzoCiudad").hide();
 		$("#escenarioT").show();
 		enLienzoMapa=true;
@@ -675,6 +791,10 @@ $("#Jugar").click(function(){
 		$("#lienzoAtaque").hide();
 		$("#lienzo1").show();
 		$("#Ejercito").show();
+		$("#Arriba").show();
+		$("#Derecha").show();
+		$("#Abajo").show();
+		$("#Izquierda").show();
 		//$("#lienzoCiudad").hide();
 		$("#escenarioT").show();
 		enLienzoMapa=true;
@@ -766,6 +886,10 @@ $("#Jugar").click(function(){
 			$("#lienzo2").hide();
 			$("#lienzoCiudad").hide();
 			$("#Ejercito").hide();
+			$("#Arriba").hide();
+			$("#Derecha").hide();
+			$("#Abajo").hide();
+			$("#Izquierda").hide();
 			$("#lienzo1").hide();
 			$("#escenarioT").hide();
 			$("#lienzoAtaque2").hide();

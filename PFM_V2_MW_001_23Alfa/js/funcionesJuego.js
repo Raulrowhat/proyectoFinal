@@ -4923,6 +4923,11 @@ function alertaGeneraAtaque(){
 		$("#lienzoCiudad").hide();
 		$("#escenarioT").hide();
 		$("#Ejercito").hide();
+		$("#Atacar").hide();
+		$("#Arriba").hide();
+		$("#Derecha").hide();
+		$("#Abajo").hide();
+		$("#Izquierda").hide();
 		activarBatalla=true;
 		$("#Atacar").hide();
 		$("#SimuladorBatalla").show();
@@ -5102,6 +5107,10 @@ function VictoriaJuego(){
 			$("#lienzo2").hide();
 			$("#lienzoCiudad").hide();
 			$("#Ejercito").hide();
+			$("#Arriba").hide();
+			$("#Derecha").hide();
+			$("#Abajo").hide();
+			$("#Izquierda").hide();
 			$("#lienzo1").hide();
 			$("#escenarioT").hide();
 			$("#lienzoAtaque2").hide();
