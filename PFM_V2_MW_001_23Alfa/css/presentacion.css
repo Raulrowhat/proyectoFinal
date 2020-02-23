@@ -234,6 +234,56 @@ body {
     
 }
 
+#Arriba{
+   font-size: 12px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:5%;
+    top:55%;
+    display:none;
+    
+}
+#Derecha{
+   font-size: 12px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:7.5%;
+    top:60%;
+    display:none;
+    
+}
+
+#Abajo{
+   font-size: 12px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:5%;
+    top:65%;
+    display:none;
+    
+}
+
+#Izquierda{
+   font-size: 12px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:2.5%;
+    top:60%;
+    display:none;
+    
+}
+
+
+
+
 
 #SiguienteTutorial{
    font-size: 20px;
