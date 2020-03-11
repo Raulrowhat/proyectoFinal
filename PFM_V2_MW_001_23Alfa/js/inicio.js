@@ -9,6 +9,7 @@ $("#Jugar").click(function(){
         
         $("#SelPersonajes").fadeIn(1000)
 		$("#P1").show();
+		$("#CargarPar").show();
 		if(Nivel>=2){
 			$("#P2").show();
 		}
@@ -46,6 +47,7 @@ $("#Jugar").click(function(){
 		$("#Derecha").show();
 		$("#Abajo").show();
 		$("#Izquierda").show();
+		$("#GuardarPar").show();
         //$("#lienzo1").hide();
         console.log("Eligio a personaje 1");
         Iniciar_el_Juego=true;
@@ -86,6 +88,7 @@ $("#Jugar").click(function(){
 						$("#Derecha").hide();
 						$("#Abajo").hide();
 						$("#Izquierda").hide();
+						$("#GuardarPar").hide();
 						$("#lienzoCiudad").fadeIn(1000);
 						$("#AtrasMapa").fadeIn(1000);
 						$("#Informacion").fadeIn(1000);
@@ -142,6 +145,7 @@ $("#Jugar").click(function(){
 		$("#Derecha").hide();
 		$("#Abajo").hide();
 		$("#Izquierda").hide();
+		$("#GuardarPar").hide();
 		puedoAtacar=false;
 		$("#RegresarEaMapa").show();
 	})
@@ -155,6 +159,7 @@ $("#Jugar").click(function(){
 		$("#Derecha").show();
 		$("#Abajo").show();
 		$("#Izquierda").show();
+		$("#GuardarPar").show();
 		$("#RegresarEaMapa").hide();
 	})
 	
@@ -254,6 +259,7 @@ $("#Jugar").click(function(){
 		$("#Derecha").fadeIn(1000);
 		$("#Abajo").fadeIn(1000);
 		$("#Izquierda").fadeIn(1000);
+		$("#GuardarPar").fadeIn(1000);
 		enLienzoCiudad=false;
 		enLienzoMapa=true;
 		mostrarPapiro=false;
@@ -600,6 +606,7 @@ $("#Jugar").click(function(){
 		$("#Derecha").hide();
 		$("#Abajo").hide();
 		$("#Izquierda").hide();
+		$("#GuardarPar").hide();
 		activarBatalla=true;
 		$("#Atacar").hide();
 		puedoAtacar=false;
@@ -639,6 +646,7 @@ $("#Jugar").click(function(){
 		$("#Derecha").show();
 		$("#Abajo").show();
 		$("#Izquierda").show();
+		$("#GuardarPar").show();
 		//$("#lienzoCiudad").hide();
 		$("#escenarioT").show();
 		enLienzoMapa=true;
@@ -693,6 +701,7 @@ $("#Jugar").click(function(){
 		$("#Derecha").show();
 		$("#Abajo").show();
 		$("#Izquierda").show();
+		$("#GuardarPar").show();
 		//$("#lienzoCiudad").hide();
 		$("#escenarioT").show();
 		enLienzoMapa=true;
@@ -795,6 +804,7 @@ $("#Jugar").click(function(){
 		$("#Derecha").show();
 		$("#Abajo").show();
 		$("#Izquierda").show();
+		$("#GuardarPar").show();
 		//$("#lienzoCiudad").hide();
 		$("#escenarioT").show();
 		enLienzoMapa=true;
@@ -889,6 +899,7 @@ $("#Jugar").click(function(){
 			$("#Arriba").hide();
 			$("#Derecha").hide();
 			$("#Abajo").hide();
+			$("#GuardarPar").hide();
 			$("#Izquierda").hide();
 			$("#lienzo1").hide();
 			$("#escenarioT").hide();
@@ -1056,6 +1067,7 @@ $("#Jugar").click(function(){
 		$("#P1").hide();
 		$("#P2").hide();
 		$("#P3").hide();
+		$("#CargarPar").hide();
 		$("#SelPersonajes").fadeOut(750);
 		$("#Login").fadeIn(1000);
         
@@ -1517,7 +1529,274 @@ $("#Jugar").click(function(){
 
 	})
 	
-   
+	
+	$("#CargarPar").click(function(){
+		 db.transaction(function (tx) { 
+		   tx.executeSql('SELECT * FROM Basicos', [], function (tx, results) { 
+		       console.log(results.rows)
+			  //tempEP=results.rows[0].PersonajeP;
+			  //console.log(tempEP)
+			 
+                    numCorazon=results.rows[0].numCorazon;//
+                    Dinero=results.rows[0].Dinero;//
+                    Nivel=results.rows[0].Nivel;//
+                    numMadera=results.rows[0].numMadera;//
+                    numLadrillos=results.rows[0].numLadrillos;//
+                    numMetal=results.rows[0].numMetal;//
+                    tropasInf1=results.rows[0].tropasInf1;//
+					tropasInf2=results.rows[0].tropasInf2;//
+					tropasInf3=results.rows[0].tropasInf3;//
+					tropasArq1=results.rows[0].tropasArq1;//
+					tropasArq2=results.rows[0].tropasArq2;//
+					tropasArq3=results.rows[0].tropasArq3;//
+					tropasCab1=results.rows[0].tropasCab1;//
+					tropasCab2=results.rows[0].tropasCab2;//
+					tropasCab3=results.rows[0].tropasCab3;//
+                  
+				  
+				   })
+				  
+				  tx.executeSql('SELECT * FROM Edificios', [], function (tx, results2) { 
+						Ciudades[0].pertenencia=results2.rows[0].ciudad1;//
+						Ciudades[0].edificio.edificioDinero=results2.rows[0].edif11;//
+						Ciudades[0].edificio.edificioRecursoMad=results2.rows[0].edif12;//
+						Ciudades[0].edificio.edificioRecursoLad=results2.rows[0].edif13;//
+						Ciudades[0].edificio.edificioRecursoMet=results2.rows[0].edif14;//
+						Ciudades[0].edificio.edificioTropaInf=results2.rows[0].edif15;//
+						Ciudades[0].edificio.edificioTropaArq=results2.rows[0].edif16;//
+						Ciudades[0].edificio.edificioTropaCab=results2.rows[0].edif17;//
+						
+						Ciudades[1].pertenencia=results2.rows[0].ciudad2;//
+						Ciudades[1].edificio.edificioDinero=results2.rows[0].edif21;//
+						Ciudades[1].edificio.edificioRecursoMad=results2.rows[0].edif22;//
+						Ciudades[1].edificio.edificioRecursoLad=results2.rows[0].edif23;//
+						Ciudades[1].edificio.edificioRecursoMet=results2.rows[0].edif24;//
+						Ciudades[1].edificio.edificioTropaInf=results2.rows[0].edif25;//
+						Ciudades[1].edificio.edificioTropaArq=results2.rows[0].edif26;//
+						Ciudades[1].edificio.edificioTropaCab=results2.rows[0].edif27;//
+						
+						Ciudades[2].pertenencia=results2.rows[0].ciudad3;//
+						Ciudades[2].edificio.edificioDinero=results2.rows[0].edif31;//
+						Ciudades[2].edificio.edificioRecursoMad=results2.rows[0].edif32;//
+						Ciudades[2].edificio.edificioRecursoLad=results2.rows[0].edif33;//
+						Ciudades[2].edificio.edificioRecursoMet=results2.rows[0].edif34;//
+						Ciudades[2].edificio.edificioTropaInf=results2.rows[0].edif35;//
+						Ciudades[2].edificio.edificioTropaArq=results2.rows[0].edif36;//
+						Ciudades[2].edificio.edificioTropaCab=results2.rows[0].edif37;//
+						
+						Ciudades[3].pertenencia=results2.rows[0].ciudad4;//
+						Ciudades[3].edificio.edificioDinero=results2.rows[0].edif41;//
+						Ciudades[3].edificio.edificioRecursoMad=results2.rows[0].edif42;//
+						Ciudades[3].edificio.edificioRecursoLad=results2.rows[0].edif43;//
+						Ciudades[3].edificio.edificioRecursoMet=results2.rows[0].edif44;//
+						Ciudades[3].edificio.edificioTropaInf=results2.rows[0].edif45;//
+						Ciudades[3].edificio.edificioTropaArq=results2.rows[0].edif46;//
+						Ciudades[3].edificio.edificioTropaCab=results2.rows[0].edif47;//
+						
+						Ciudades[4].pertenencia=results2.rows[0].ciudad5;//
+						Ciudades[4].edificio.edificioDinero=results2.rows[0].edif51;//
+						Ciudades[4].edificio.edificioRecursoMad=results2.rows[0].edif52;//
+						Ciudades[4].edificio.edificioRecursoLad=results2.rows[0].edif53;//
+						Ciudades[4].edificio.edificioRecursoMet=results2.rows[0].edif54;//
+						Ciudades[4].edificio.edificioTropaInf=results2.rows[0].edif55;//
+						Ciudades[4].edificio.edificioTropaArq=results2.rows[0].edif56;//
+						Ciudades[4].edificio.edificioTropaCab=results2.rows[0].edif57;//
+						
+						Ciudades[5].pertenencia=results2.rows[0].ciudad6;//
+						Ciudades[5].edificio.edificioDinero=results2.rows[0].edif61;//
+						Ciudades[5].edificio.edificioRecursoMad=results2.rows[0].edif62;//
+						Ciudades[5].edificio.edificioRecursoLad=results2.rows[0].edif63;//
+						Ciudades[5].edificio.edificioRecursoMet=results2.rows[0].edif64;//
+						Ciudades[5].edificio.edificioTropaInf=results2.rows[0].edif65;//
+						Ciudades[5].edificio.edificioTropaArq=results2.rows[0].edif66;//
+						Ciudades[5].edificio.edificioTropaCab=results2.rows[0].edif67;//
+						
+						Ciudades[6].pertenencia=results2.rows[0].ciudad7;//
+						Ciudades[6].edificio.edificioDinero=results2.rows[0].edif71;//
+						Ciudades[6].edificio.edificioRecursoMad=results2.rows[0].edif72;//
+						Ciudades[6].edificio.edificioRecursoLad=results2.rows[0].edif73;//
+						Ciudades[6].edificio.edificioRecursoMet=results2.rows[0].edif74;//
+						Ciudades[6].edificio.edificioTropaInf=results2.rows[0].edif75;//
+						Ciudades[6].edificio.edificioTropaArq=results2.rows[0].edif76;//
+						Ciudades[6].edificio.edificioTropaCab=results2.rows[0].edif77;//
+						
+						Ciudades[7].pertenencia=results2.rows[0].ciudad8;//
+						Ciudades[7].edificio.edificioDinero=results2.rows[0].edif81;//
+						Ciudades[7].edificio.edificioRecursoMad=results2.rows[0].edif82;//
+						Ciudades[7].edificio.edificioRecursoLad=results2.rows[0].edif83;//
+						Ciudades[7].edificio.edificioRecursoMet=results2.rows[0].edif84;//
+						Ciudades[7].edificio.edificioTropaInf=results2.rows[0].edif85;//
+						Ciudades[7].edificio.edificioTropaArq=results2.rows[0].edif86;//
+						Ciudades[7].edificio.edificioTropaCab=results2.rows[0].edif87;//
+						
+						Ciudades[8].pertenencia=results2.rows[0].ciudad9;//
+						Ciudades[8].edificio.edificioDinero=results2.rows[0].edif91;//
+						Ciudades[8].edificio.edificioRecursoMad=results2.rows[0].edif92;//
+						Ciudades[8].edificio.edificioRecursoLad=results2.rows[0].edif93;//
+						Ciudades[8].edificio.edificioRecursoMet=results2.rows[0].edif94;//
+						Ciudades[8].edificio.edificioTropaInf=results2.rows[0].edif95;//
+						Ciudades[8].edificio.edificioTropaArq=results2.rows[0].edif96;//
+						Ciudades[8].edificio.edificioTropaCab=results2.rows[0].edif97;//
+				  
+				  })
+				  
+                	if(cImg==true){ 
+					   enEleccionNivel=false;       
+									   
+						$("#SelPersonajes").fadeOut(1000)
+						$("#CondicionVictoria").hide();
+						$("#Juego").fadeIn(1000)
+						$("#lienzo2").hide();
+						$("#lienzoCiudad").hide();
+						$("#CargarPar").hide();
+						$("#Ejercito").show();
+						$("#lienzo1").show();
+						$("#escenarioT").show();
+						
+						$("#Arriba").show();
+						$("#Derecha").show();
+						$("#Abajo").show();
+						$("#Izquierda").show();
+						$("#GuardarPar").show();
+						//$("#lienzo1").hide();
+						console.log("Eligio a personaje 1");
+						Iniciar_el_Juego=true;
+						enLienzoCiudad=false;
+						enLienzoMapa=true;
+						Nivel=1;
+						
+						
+						bucle();//pasa al bucle
+					}
+					else{
+						 alert("Disculpa las molestias, las imagenes se estan cargando");
+						 }
+						  
+			      
+			 
+		      
+		})
+		
+   	})
+	
+	$("#GuardarPar").click(function(){
+		
+		  db.transaction(function (tx) { 
+                tx.executeSql('UPDATE Basicos SET numCorazon='+numCorazon+' WHERE  Basicos.rowid='+1+'');
+                tx.executeSql('UPDATE Basicos SET Dinero='+Dinero+' WHERE  Basicos.rowid='+1+'');
+                tx.executeSql('UPDATE Basicos SET Nivel='+Nivel+' WHERE  Basicos.rowid='+1+'');
+                tx.executeSql('UPDATE Basicos SET numMadera='+numMadera+' WHERE  Basicos.rowid='+1+'');
+                tx.executeSql('UPDATE Basicos SET numLadrillos='+numLadrillos+' WHERE  Basicos.rowid='+1+'');
+                tx.executeSql('UPDATE Basicos SET numMetal='+numMetal+' WHERE  Basicos.rowid='+1+'');
+                tx.executeSql('UPDATE Basicos SET tropasInf1='+tropasInf1+' WHERE  Basicos.rowid='+1+'');
+				tx.executeSql('UPDATE Basicos SET tropasInf2='+tropasInf2+' WHERE  Basicos.rowid='+1+'');
+				tx.executeSql('UPDATE Basicos SET tropasInf3='+tropasInf3+' WHERE  Basicos.rowid='+1+'');
+				tx.executeSql('UPDATE Basicos SET tropasArq1='+tropasArq1+' WHERE  Basicos.rowid='+1+'');
+				tx.executeSql('UPDATE Basicos SET tropasArq2='+tropasArq2+' WHERE  Basicos.rowid='+1+'');
+				tx.executeSql('UPDATE Basicos SET tropasArq3='+tropasArq3+' WHERE  Basicos.rowid='+1+'');
+				tx.executeSql('UPDATE Basicos SET tropasCab1='+tropasCab1+' WHERE  Basicos.rowid='+1+'');
+				tx.executeSql('UPDATE Basicos SET tropasCab2='+tropasCab2+' WHERE  Basicos.rowid='+1+'');
+				tx.executeSql('UPDATE Basicos SET tropasCab3='+tropasCab3+' WHERE  Basicos.rowid='+1+'');
+                tx.executeSql('DELETE FROM Basicos WHERE  Basicos.rowid='+2+'');
+				
+				
+				
+				
+				
+				
+				tx.executeSql('UPDATE Edificios SET ciudad1='+Ciudades[0].pertenencia+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif11='+Ciudades[0].edificio.edificioDinero+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif12='+Ciudades[0].edificio.edificioRecursoMad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif13='+Ciudades[0].edificio.edificioRecursoLad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif14='+Ciudades[0].edificio.edificioRecursoMet+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif15='+Ciudades[0].edificio.edificioTropaInf+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif16='+Ciudades[0].edificio.edificioTropaArq+' WHERE  Edificios.rowid='+1+'');
+				tx.executeSql('UPDATE Edificios SET edif17='+Ciudades[0].edificio.edificioTropaCab+' WHERE  Edificios.rowid='+1+'');
+				
+				tx.executeSql('UPDATE Edificios SET ciudad2='+Ciudades[1].pertenencia+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif21='+Ciudades[1].edificio.edificioDinero+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif22='+Ciudades[1].edificio.edificioRecursoMad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif23='+Ciudades[1].edificio.edificioRecursoLad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif24='+Ciudades[1].edificio.edificioRecursoMet+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif25='+Ciudades[1].edificio.edificioTropaInf+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif26='+Ciudades[1].edificio.edificioTropaArq+' WHERE  Edificios.rowid='+1+'');
+				tx.executeSql('UPDATE Edificios SET edif27='+Ciudades[1].edificio.edificioTropaCab+' WHERE  Edificios.rowid='+1+'');
+				
+				tx.executeSql('UPDATE Edificios SET ciudad3='+Ciudades[2].pertenencia+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif31='+Ciudades[2].edificio.edificioDinero+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif32='+Ciudades[2].edificio.edificioRecursoMad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif33='+Ciudades[2].edificio.edificioRecursoLad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif34='+Ciudades[2].edificio.edificioRecursoMet+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif35='+Ciudades[2].edificio.edificioTropaInf+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif36='+Ciudades[2].edificio.edificioTropaArq+' WHERE  Edificios.rowid='+1+'');
+				tx.executeSql('UPDATE Edificios SET edif37='+Ciudades[2].edificio.edificioTropaCab+' WHERE  Edificios.rowid='+1+'');
+				
+				tx.executeSql('UPDATE Edificios SET ciudad4='+Ciudades[3].pertenencia+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif41='+Ciudades[3].edificio.edificioDinero+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif42='+Ciudades[3].edificio.edificioRecursoMad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif43='+Ciudades[3].edificio.edificioRecursoLad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif44='+Ciudades[3].edificio.edificioRecursoMet+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif45='+Ciudades[3].edificio.edificioTropaInf+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif46='+Ciudades[3].edificio.edificioTropaArq+' WHERE  Edificios.rowid='+1+'');
+				tx.executeSql('UPDATE Edificios SET edif47='+Ciudades[3].edificio.edificioTropaCab+' WHERE  Edificios.rowid='+1+'');
+				
+				tx.executeSql('UPDATE Edificios SET ciudad5='+Ciudades[4].pertenencia+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif51='+Ciudades[4].edificio.edificioDinero+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif52='+Ciudades[4].edificio.edificioRecursoMad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif53='+Ciudades[4].edificio.edificioRecursoLad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif54='+Ciudades[4].edificio.edificioRecursoMet+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif55='+Ciudades[4].edificio.edificioTropaInf+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif56='+Ciudades[4].edificio.edificioTropaArq+' WHERE  Edificios.rowid='+1+'');
+				tx.executeSql('UPDATE Edificios SET edif57='+Ciudades[4].edificio.edificioTropaCab+' WHERE  Edificios.rowid='+1+'');
+				
+				tx.executeSql('UPDATE Edificios SET ciudad6='+Ciudades[5].pertenencia+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif61='+Ciudades[5].edificio.edificioDinero+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif62='+Ciudades[5].edificio.edificioRecursoMad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif63='+Ciudades[5].edificio.edificioRecursoLad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif64='+Ciudades[5].edificio.edificioRecursoMet+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif65='+Ciudades[5].edificio.edificioTropaInf+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif66='+Ciudades[5].edificio.edificioTropaArq+' WHERE  Edificios.rowid='+1+'');
+				tx.executeSql('UPDATE Edificios SET edif67='+Ciudades[5].edificio.edificioTropaCab+' WHERE  Edificios.rowid='+1+'');
+				
+				tx.executeSql('UPDATE Edificios SET ciudad7='+Ciudades[6].pertenencia+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif71='+Ciudades[6].edificio.edificioDinero+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif72='+Ciudades[6].edificio.edificioRecursoMad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif73='+Ciudades[6].edificio.edificioRecursoLad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif74='+Ciudades[6].edificio.edificioRecursoMet+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif75='+Ciudades[6].edificio.edificioTropaInf+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif76='+Ciudades[6].edificio.edificioTropaArq+' WHERE  Edificios.rowid='+1+'');
+				tx.executeSql('UPDATE Edificios SET edif77='+Ciudades[6].edificio.edificioTropaCab+' WHERE  Edificios.rowid='+1+'');
+				
+				tx.executeSql('UPDATE Edificios SET ciudad8='+Ciudades[7].pertenencia+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif81='+Ciudades[7].edificio.edificioDinero+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif82='+Ciudades[7].edificio.edificioRecursoMad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif83='+Ciudades[7].edificio.edificioRecursoLad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif84='+Ciudades[7].edificio.edificioRecursoMet+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif85='+Ciudades[7].edificio.edificioTropaInf+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif86='+Ciudades[7].edificio.edificioTropaArq+' WHERE  Edificios.rowid='+1+'');
+				tx.executeSql('UPDATE Edificios SET edif87='+Ciudades[7].edificio.edificioTropaCab+' WHERE  Edificios.rowid='+1+'');
+				
+				tx.executeSql('UPDATE Edificios SET ciudad9='+Ciudades[8].pertenencia+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif91='+Ciudades[8].edificio.edificioDinero+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif92='+Ciudades[8].edificio.edificioRecursoMad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif93='+Ciudades[8].edificio.edificioRecursoLad+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif94='+Ciudades[8].edificio.edificioRecursoMet+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif95='+Ciudades[8].edificio.edificioTropaInf+' WHERE  Edificios.rowid='+1+'');
+                tx.executeSql('UPDATE Edificios SET edif96='+Ciudades[8].edificio.edificioTropaArq+' WHERE  Edificios.rowid='+1+'');
+				tx.executeSql('UPDATE Edificios SET edif97='+Ciudades[8].edificio.edificioTropaCab+' WHERE  Edificios.rowid='+1+'');
+				
+                tx.executeSql('DELETE FROM Edificios WHERE  Edificios.rowid='+2+'');
+				
+				
+				
+				
+				
+                //tx.executeSql('INSERT INTO Puntajes (PuntajeGeneral, PtriviaF,PtriviaB, PtriviaEA, PminiF, PminiB, PminiEA) VALUES('+1+','+0+','+0+','+0+','+0+','+0+','+0+')WHERE  Puntajes.rowid='+1+'');
+                //WHERE  `posiciones`.`id` =2  ,Dinero,Nivel,numMadera,numLadrillos,numMetal,tropasInf1,tropasInf2,tropasInf3,tropasArq1,tropasArq2,tropasArq3,tropasCab1,tropasCab2,tropasCab3
+           //ciudad1,edif11,edif12,edif13,edif14,edif15,edif16,edif17
+
+		   });
+   	})
    
     $(window).resize(function(){
 		//console.log("resize")

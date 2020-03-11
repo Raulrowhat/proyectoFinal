@@ -832,7 +832,22 @@ var dibujarTropaTutorial=false;
 //instrucciones fin
 
 
-
+//base de datos
+var db = openDatabase('PuntajesJuego', '1.0', 'MWS', 3 * 1024 * 1024);
+//ALTER TABLE  `posiciones` ADD  `locura` INT( 7 ) NOT NULL ;
+db.transaction(function (tx) { 
+   
+   tx.executeSql('CREATE TABLE IF NOT EXISTS Basicos (numCorazon,Dinero,Nivel,numMadera,numLadrillos,numMetal,tropasInf1,tropasInf2,tropasInf3,tropasArq1,tropasArq2,tropasArq3,tropasCab1,tropasCab2,tropasCab3)');
+   
+   tx.executeSql('INSERT INTO Basicos (numCorazon,Dinero,Nivel,numMadera,numLadrillos,numMetal,tropasInf1,tropasInf2,tropasInf3,tropasArq1,tropasArq2,tropasArq3,tropasCab1,tropasCab2,tropasCab3) VALUES('+3+','+500+','+1+','+500+','+500+','+500+','+40+','+0+','+0+','+40+','+0+','+0+','+20+','+0+','+0+')');    
+   tx.executeSql('DELETE FROM Basicos WHERE  Basicos.rowid='+2+'');
+   
+   tx.executeSql('CREATE TABLE IF NOT EXISTS Edificios (ciudad1,edif11,edif12,edif13,edif14,edif15,edif16,edif17,ciudad2,edif21,edif22,edif23,edif24,edif25,edif26,edif27,ciudad3,edif31,edif32,edif33,edif34,edif35,edif36,edif37,ciudad4,edif41,edif42,edif43,edif44,edif45,edif46,edif47,ciudad5,edif51,edif52,edif53,edif54,edif55,edif56,edif57,ciudad6,edif61,edif62,edif63,edif64,edif65,edif66,edif67,ciudad7,edif71,edif72,edif73,edif74,edif75,edif76,edif77,ciudad8,edif81,edif82,edif83,edif84,edif85,edif86,edif87,ciudad9,edif91,edif92,edif93,edif94,edif95,edif96,edif97)');
+   
+   tx.executeSql('INSERT INTO Edificios (ciudad1,edif11,edif12,edif13,edif14,edif15,edif16,edif17,ciudad2,edif21,edif22,edif23,edif24,edif25,edif26,edif27,ciudad3,edif31,edif32,edif33,edif34,edif35,edif36,edif37,ciudad4,edif41,edif42,edif43,edif44,edif45,edif46,edif47,ciudad5,edif51,edif52,edif53,edif54,edif55,edif56,edif57,ciudad6,edif61,edif62,edif63,edif64,edif65,edif66,edif67,ciudad7,edif71,edif72,edif73,edif74,edif75,edif76,edif77,ciudad8,edif81,edif82,edif83,edif84,edif85,edif86,edif87,ciudad9,edif91,edif92,edif93,edif94,edif95,edif96,edif97) VALUES('+1+','+1+','+1+','+1+','+1+','+1+','+1+','+1+','+0+','+1+','+1+','+1+','+1+','+1+','+1+','+1+','+0+','+1+','+1+','+1+','+1+','+1+','+1+','+1+','+0+','+1+','+1+','+1+','+1+','+1+','+1+','+1+','+0+','+1+','+1+','+1+','+1+','+1+','+1+','+1+','+0+','+1+','+1+','+1+','+1+','+1+','+1+','+1+','+0+','+1+','+1+','+1+','+1+','+1+','+1+','+1+','+0+','+1+','+1+','+1+','+1+','+1+','+1+','+1+','+0+','+1+','+1+','+1+','+1+','+1+','+1+','+1+')');    
+   tx.executeSql('DELETE FROM Edificios WHERE  Edificios.rowid='+2+'');
+  
+});
 
 
 

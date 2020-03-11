@@ -160,7 +160,7 @@ function Ciudad(){
 	this.actualizarProduccion = function(){
 		this.produccion.prodTropaInf=20*this.edificio.edificioTropaInf;//produccion del edificio de tropas de infanteria
 		this.produccion.prodTropaArq=20*this.edificio.edificioTropaArq;//produccion del edificio de tropas de arqueria
-		this.produccion.prodTropaCab=20*this.edificio.edificioRecursoMet;//produccion del edificio de tropas de caballeria
+		this.produccion.prodTropaCab=20*this.edificio.edificioTropaCab;//produccion del edificio de tropas de caballeria
 				
 		this.produccion.prodRecursoMad=50*this.edificio.edificioRecursoMad;//produccion del edificio de recursos de madera
 		this.produccion.prodRecursoLad=30*this.edificio.edificioRecursoLad;//produccion del edificio de recursos de ladrillos
