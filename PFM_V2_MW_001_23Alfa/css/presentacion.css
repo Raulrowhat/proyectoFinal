@@ -282,6 +282,16 @@ body {
 }
 
 
+#GuardarPar{
+    font-size: 15px;
+    position: absolute;
+	
+    text-align: center;
+    border:3px solid black; 
+    left:2%;
+    top:70%;
+    display:none;
+}
 
 
 
@@ -828,8 +838,8 @@ h2{
 	
     text-align: center;
     border:3px solid black; 
-    left:20%;
-    top:35%;
+    left:62%;
+    top:90%;
     
 }
 
